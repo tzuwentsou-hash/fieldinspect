@@ -6,6 +6,7 @@ struct FieldInspectApp: App {
     @State private var syncQueue = OfflineSyncQueue()
     @State private var storeKit = StoreKitManager()
     @State private var showSplash = true
+    @Environment(\.scenePhase) private var scenePhase
 
     let modelContainer: ModelContainer
 
@@ -47,7 +48,11 @@ struct FieldInspectApp: App {
             }
             .task {
                 syncQueue.configure(modelContainer: modelContainer)
-                storeKit.start()
+                // When the app is only hosting unit tests, leave StoreKit to the tests' SKTestSession:
+                // touching StoreKit before the session exists binds purchases to the Sandbox account.
+                if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil {
+                    storeKit.start()
+                }
                 try? await Task.sleep(for: .seconds(3.0))
                 withAnimation(.easeOut(duration: 0.35)) {
                     showSplash = false
@@ -55,5 +60,12 @@ struct FieldInspectApp: App {
             }
         }
         .modelContainer(modelContainer)
+        .onChange(of: scenePhase) { _, phase in
+            // Re-check the subscription whenever the app comes back to the foreground so an expired
+            // or refunded subscription stops unlocking Pro without needing a cold launch.
+            if phase == .active {
+                Task { await storeKit.refreshEntitlements() }
+            }
+        }
     }
 }

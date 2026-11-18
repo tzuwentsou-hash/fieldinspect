@@ -1,0 +1,1070 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld %@" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "%1$lld %2$@" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "%1$lld %2$@" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "%1$lld %2$@" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "%1$lld %2$@" } }
+      }
+    },
+    "%lld Queued" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "%lld Queued" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "%lld En cola" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "%lld 条排队中" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "%lld 筆排隊中" } }
+      }
+    },
+    "%lld finding(s) queued for AI synthesis." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "%lld finding(s) queued for AI synthesis." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "%lld hallazgo(s) en cola para síntesis con IA." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "%lld 条记录正在排队等待 AI 生成。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "%lld 筆記錄正在排隊等待 AI 生成。" } }
+      }
+    },
+    "%lld finding(s) queued for Gemini AI synthesis." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "%lld finding(s) queued for Gemini AI synthesis." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "%lld hallazgo(s) en cola para análisis con Gemini IA." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "%lld 条缺陷记录正在排队等待 Gemini AI 分析。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "%lld 筆缺陷記錄正在排隊等待 Gemini AI 分析。" } }
+      }
+    },
+    "AI Processing & Privacy" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "AI Processing & Privacy" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Procesamiento con IA y Privacidad" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "AI 处理与隐私说明" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "AI 處理與隱私說明" } }
+      }
+    },
+    "AI Retry Needed" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "AI Retry Needed" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Reintentar IA" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "需要重试 AI" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "需要重試 AI" } }
+      }
+    },
+    "AI Synthesized" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "AI Synthesized" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Generado por IA" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "AI 已生成" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "AI 已生成" } }
+      }
+    },
+    "AI Visual Cross-Verification" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "AI Visual Cross-Verification" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Verificación Visual por IA" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "AI 视觉交叉核验" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "AI 視覺交叉核驗" } }
+      }
+    },
+    "Active Inspections" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Active Inspections" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Inspecciones Activas" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "进行中的验房" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "進行中的驗屋" } }
+      }
+    },
+    "Agree & Save" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Agree & Save" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Aceptar y Guardar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "同意并保存" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "同意並儲存" } }
+      }
+    },
+    "All Recorded Findings" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All Recorded Findings" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Todos los Hallazgos" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "全部已记录缺陷" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "全部已記錄缺陷" } }
+      }
+    },
+    "Ambient Temperature (e.g. 68°F)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ambient Temperature (e.g. 68°F)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Temperatura Ambiente (ej. 68°F)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "环境温度（例如 68°F）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "環境溫度（例如 68°F）" } }
+      }
+    },
+    "Analyze Now" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Analyze Now" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Analizar Ahora" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "立即分析" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "立即分析" } }
+      }
+    },
+    "Analyzing with AI…" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Analyzing with AI…" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Analizando con IA…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "AI 分析中…" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "AI 分析中…" } }
+      }
+    },
+    "Annual Pro" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Annual Pro" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Pro Anual" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "年度专业版" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "年度專業版" } }
+      }
+    },
+    "Attached inspection photos and voice memos are transmitted securely to FieldInspect's stateless AI proxy (Google Gemini API) solely to generate your InterNACHI defect narrative. Data is not retained by the proxy." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Attached inspection photos and voice memos are transmitted securely to FieldInspect's stateless AI proxy (Google Gemini API) solely to generate your InterNACHI defect narrative. Data is not retained by the proxy." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Las fotos de inspección y notas de voz se transmiten de forma segura al proxy de IA sin estado de FieldInspect (Google Gemini API) únicamente para generar el informe InterNACHI. El proxy no retiene los datos." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "所附验房照片与语音备忘录将通过加密通道发送至 FieldInspect 无状态 AI 代理（Google Gemini API），仅用于生成 InterNACHI 规范的缺陷描述，代理服务器不会留存您的数据。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "所附驗屋照片與語音備忘錄將透過加密通道傳送至 FieldInspect 無狀態 AI 代理（Google Gemini API），僅用於生成 InterNACHI 規範的缺陷描述，代理伺服器不會留存您的資料。" } }
+      }
+    },
+    "Attic & Insulation" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Attic & Insulation" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ático y Aislamiento" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "阁楼与保温" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "閣樓與保溫" } }
+      }
+    },
+    "Attic, Insulation & Ventilation" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Attic, Insulation & Ventilation" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ático, Aislamiento y Ventilación" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "阁楼、保温与通风" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "閣樓、保溫與通風" } }
+      }
+    },
+    "Building System" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Building System" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sistema Constructivo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "建筑系统" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "建築系統" } }
+      }
+    },
+    "Building Systems (InterNACHI)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Building Systems (InterNACHI)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sistemas del Inmueble (InterNACHI)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "建筑系统分类（InterNACHI）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "建築系統分類（InterNACHI）" } }
+      }
+    },
+    "COMPLETED" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "COMPLETED" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "COMPLETADA" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已完成" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "已完成" } }
+      }
+    },
+    "Camera" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Camera" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cámara" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "拍照" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "拍照" } }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cancelar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "取消" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "取消" } }
+      }
+    },
+    "Capture Defect" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Capture Defect" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Registrar Defecto" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "采集缺陷" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "採集缺陷" } }
+      }
+    },
+    "Capture Finding" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Capture Finding" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Capturar Hallazgo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "采集缺陷记录" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "採集缺陷記錄" } }
+      }
+    },
+    "Capture findings anywhere; auto-syncs when signal returns." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Capture findings anywhere; auto-syncs when signal returns." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Registra hallazgos en cualquier lugar; se sincronizan al recuperar señal." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无信号也可随时采集，恢复网络后自动排队同步。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "無訊號也可隨時採集，恢復網路後自動排隊同步。" } }
+      }
+    },
+    "Choose Photo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose Photo" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Elegir Foto" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择照片" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "選擇照片" } }
+      }
+    },
+    "Classification" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Classification" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Clasificación" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "分类信息" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "分類資訊" } }
+      }
+    },
+    "Clear Markup" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Clear Markup" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Borrar Trazos" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清除标注" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "清除標註" } }
+      }
+    },
+    "Client Name" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Client Name" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nombre del Cliente" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "客户姓名" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "客戶姓名" } }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Close" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cerrar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关闭" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "關閉" } }
+      }
+    },
+    "Compiling Illustrated Inspection Report…" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Compiling Illustrated Inspection Report…" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Generando informe ilustrado en PDF…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在生成图文验房报告…" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "正在生成圖文驗屋報告…" } }
+      }
+    },
+    "Completed Reports" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Completed Reports" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Informes Completados" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已完成的报告" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "已完成的報告" } }
+      }
+    },
+    "Cover Photo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cover Photo" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Foto de Portada" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "封面照片" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "封面照片" } }
+      }
+    },
+    "Create" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Create" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Crear" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "创建" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "建立" } }
+      }
+    },
+    "Cross-verifies site photos and voice memos into defensible narratives." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cross-verifies site photos and voice memos into defensible narratives." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cruza fotos del sitio y notas de voz para crear descripciones técnicas sólidas." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "结合现场照片与语音备忘录，自动生成严谨专业描述。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "結合現場照片與語音備忘錄，自動生成嚴謹專業描述。" } }
+      }
+    },
+    "Defect Headline" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Defect Headline" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Título del Defecto" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "缺陷标题" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "缺陷標題" } }
+      }
+    },
+    "Delete Finding" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete Finding" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Eliminar Hallazgo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "删除此条记录" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "刪除此筆記錄" } }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Done" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Listo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "完成" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "完成" } }
+      }
+    },
+    "Edit Finding" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit Finding" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Editar Hallazgo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "编辑缺陷记录" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "編輯缺陷記錄" } }
+      }
+    },
+    "Electrical" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Electrical" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Eléctrico" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "电气" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "電氣" } }
+      }
+    },
+    "Electrical System" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Electrical System" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sistema Eléctrico" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "电气系统" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "電氣系統" } }
+      }
+    },
+    "Executive Summary + Building System sections ready for buyers & agents." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Executive Summary + Building System sections ready for buyers & agents." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Resumen ejecutivo y secciones por sistema listos para compradores y agentes." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "含执行摘要与分系统详情，可直接发送买家与经纪人。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "含執行摘要與分系統詳情，可直接發送買家與經紀人。" } }
+      }
+    },
+    "Exterior" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exterior" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Exterior" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "外墙与室外" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "外牆與室外" } }
+      }
+    },
+    "Exterior, Siding & Grading" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exterior, Siding & Grading" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Exterior, Revestimiento y Nivelación" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "外墙、壁板与排水坡度" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "外牆、壁板與排水坡度" } }
+      }
+    },
+    "Findings will be queued locally and processed automatically when online." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Findings will be queued locally and processed automatically when online." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Los hallazgos se guardarán localmente y se procesarán al volver la conexión." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "缺陷记录将先保存在本地，联网后自动排队分析。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "缺陷記錄將先儲存在本機，連網後自動排隊分析。" } }
+      }
+    },
+    "Foundation & Structure" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Foundation & Structure" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cimentación y Estructura" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "地基与主体结构" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "地基與主體結構" } }
+      }
+    },
+    "HVAC" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "HVAC" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Climatización" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "暖通空调" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "暖通空調" } }
+      }
+    },
+    "Heating, Ventilation & Cooling" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Heating, Ventilation & Cooling" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Calefacción, Ventilación y Aire Acondicionado" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "供暖、通风与空调系统" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "供暖、通風與空調系統" } }
+      }
+    },
+    "Hold to Dictate Defect Finding" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hold to Dictate Defect Finding" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Mantén pulsado para dictar hallazgo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "按住口述缺陷描述" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "按住口述缺陷描述" } }
+      }
+    },
+    "Initial Severity" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Initial Severity" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Gravedad Inicial" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "初步严重程度" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "初步嚴重程度" } }
+      }
+    },
+    "Inspected / Functional" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Inspected / Functional" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Inspeccionado / Funcional" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已检 / 功能正常" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "已檢 / 功能正常" } }
+      }
+    },
+    "Inspection Company" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Inspection Company" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Empresa de Inspección" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "验房公司名称" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "驗屋公司名稱" } }
+      }
+    },
+    "Inspector Credentials" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Inspector Credentials" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Credenciales del Inspector" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "验房师资质信息" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "驗屋師資質資訊" } }
+      }
+    },
+    "Inspector Name" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Inspector Name" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nombre del Inspector" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "验房师姓名" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "驗屋師姓名" } }
+      }
+    },
+    "Inspector Voice Memo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Inspector Voice Memo" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nota de Voz del Inspector" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "验房师语音备忘录" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "驗屋師語音備忘錄" } }
+      }
+    },
+    "Instant Illustrated PDF Reports" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Instant Illustrated PDF Reports" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Informes PDF Ilustrados al Instante" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "一键生成图文 PDF 报告" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "一鍵生成圖文 PDF 報告" } }
+      }
+    },
+    "InterNACHI & ASHI AI Synthesis" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "InterNACHI & ASHI AI Synthesis" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Síntesis IA InterNACHI y ASHI" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "InterNACHI & ASHI 规范 AI 生成" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "InterNACHI & ASHI 規範 AI 生成" } }
+      }
+    },
+    "Interior" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Interior" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Interior" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "室内" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "室內" } }
+      }
+    },
+    "Interior, Windows & Doors" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Interior, Windows & Doors" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Interior, Ventanas y Puertas" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "室内、门窗与装修" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "室內、門窗與裝修" } }
+      }
+    },
+    "Library" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Library" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Fototeca" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "相册" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "相簿" } }
+      }
+    },
+    "Location (e.g. Basement — Main Panel)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Location (e.g. Basement — Main Panel)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ubicación (ej. Sótano — Cuadro Principal)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "具体位置（如：地下室 — 主配电箱）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "具體位置（如：地下室 — 主配電箱）" } }
+      }
+    },
+    "Location (optional, e.g. Basement — Main Panel)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Location (optional, e.g. Basement — Main Panel)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ubicación (opcional, ej. Sótano — Cuadro Principal)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "位置（可选，如：地下室 — 主配电箱）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "位置（可選，如：地下室 — 主配電箱）" } }
+      }
+    },
+    "Major" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Major" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Grave" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "重大" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "重大" } }
+      }
+    },
+    "Major Defect" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Major Defect" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Defecto Grave" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "重大缺陷" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "重大缺陷" } }
+      }
+    },
+    "Mark Completed" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mark Completed" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Marcar como Completada" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "标记为已完成" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "標記為已完成" } }
+      }
+    },
+    "Memo Ready" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Memo Ready" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nota Lista" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "录音已就绪" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "錄音已就緒" } }
+      }
+    },
+    "Monitor" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Monitor" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Vigilar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "观察" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "觀察" } }
+      }
+    },
+    "Monitor / Maintenance" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Monitor / Maintenance" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Vigilar / Mantenimiento" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "观察 / 建议维护" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "觀察 / 建議維護" } }
+      }
+    },
+    "Monthly Pro" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Monthly Pro" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Pro Mensual" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "月度专业版" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "月度專業版" } }
+      }
+    },
+    "New Inspection" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Inspection" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nueva Inspección" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "新建验房" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "新增驗屋" } }
+      }
+    },
+    "No Property Inspections Yet" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Property Inspections Yet" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sin Inspecciones Todavía" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "暂无验房记录" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "尚無驗屋記錄" } }
+      }
+    },
+    "No findings recorded yet." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No findings recorded yet." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Aún no hay hallazgos registrados." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "暂未记录任何缺陷。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "尚未記錄任何缺陷。" } }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "OK" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Bien" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正常" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "正常" } }
+      }
+    },
+    "Observation Narrative" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Observation Narrative" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Descripción de la Observación" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "现场观察描述" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "現場觀察描述" } }
+      }
+    },
+    "Offline (Basement / Crawlspace): Captures save locally and auto-sync later." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Offline (Basement / Crawlspace): Captures save locally and auto-sync later." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sin conexión (Sótano): se guarda localmente y se sincroniza después." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "离线模式（地下室/爬行空间）：已本地保存，联网后自动同步。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "離線模式（地下室/爬行空間）：已本機儲存，連網後自動同步。" } }
+      }
+    },
+    "Offline Basement & Crawlspace Queue" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Offline Basement & Crawlspace Queue" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cola Sin Conexión para Sótanos" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "地下室 / 无信号离线队列" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "地下室 / 無訊號離線佇列" } }
+      }
+    },
+    "Offline Mode (Basement / Crawlspace)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Offline Mode (Basement / Crawlspace)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Modo Sin Conexión (Sótano)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "离线模式（地下室 / 无信号）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "離線模式（地下室 / 無訊號）" } }
+      }
+    },
+    "Offline: Finding will be saved locally with 'Queued for AI (Offline)'." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Offline: Finding will be saved locally with 'Queued for AI (Offline)'." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sin conexión: el hallazgo se guardará como 'En cola para IA (Sin conexión)'." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "当前离线：记录将本地保存并标记为“排队等待 AI（离线）”。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "目前離線：記錄將本機儲存並標記為「排隊等待 AI（離線）」。" } }
+      }
+    },
+    "Online: Gemini AI will synthesize photos + voice memo upon save." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Online: Gemini AI will synthesize photos + voice memo upon save." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "En línea: Gemini IA sintetizará fotos y nota de voz al guardar." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "当前在线：保存后 Gemini AI 将自动结合照片与语音生成报告。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "目前線上：儲存後 Gemini AI 將自動結合照片與語音生成報告。" } }
+      }
+    },
+    "Optional text note (if unable to speak)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Optional text note (if unable to speak)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nota de texto opcional (si no puedes hablar)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "可选文字备注（若现场不便口述）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "可選文字備註（若現場不便口述）" } }
+      }
+    },
+    "Play Memo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Play Memo" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Reproducir" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "播放录音" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "播放錄音" } }
+      }
+    },
+    "Play Voice Memo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Play Voice Memo" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Reproducir Nota de Voz" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "播放语音备忘录" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "播放語音備忘錄" } }
+      }
+    },
+    "Plumbing" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Plumbing" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Fontanería" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "给排水" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "給排水" } }
+      }
+    },
+    "Plumbing System" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Plumbing System" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sistema de Fontanería" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "给排水系统" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "給排水系統" } }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Privacy Policy" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Política de Privacidad" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "隐私政策" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "隱私權政策" } }
+      }
+    },
+    "Property Address (e.g. 742 Evergreen Ter)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Property Address (e.g. 742 Evergreen Ter)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Dirección del Inmueble (ej. 742 Evergreen Ter)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "房产地址（如：742 Evergreen Ter）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "房產地址（如：742 Evergreen Ter）" } }
+      }
+    },
+    "Property Details" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Property Details" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Detalles del Inmueble" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "房屋基本信息" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "房屋基本資訊" } }
+      }
+    },
+    "Property Type" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Property Type" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Tipo de Inmueble" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "房屋类型" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "房屋類型" } }
+      }
+    },
+    "Queued for AI (Offline)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Queued for AI (Offline)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "En cola para IA (Sin conexión)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "排队等待 AI（离线）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "排隊等待 AI（離線）" } }
+      }
+    },
+    "Re-record" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Re-record" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Regrabar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "重录" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "重錄" } }
+      }
+    },
+    "Recommendation (InterNACHI)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Recommendation (InterNACHI)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Recomendación (InterNACHI)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "整改建议（InterNACHI）" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "整改建議（InterNACHI）" } }
+      }
+    },
+    "Recording… Release to Stop" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Recording… Release to Stop" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Grabando… Suelta para detener" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在录音… 松开结束" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "正在錄音… 放開結束" } }
+      }
+    },
+    "Remove" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remove" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Quitar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "移除" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "移除" } }
+      }
+    },
+    "Reopen Inspection" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Reopen Inspection" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Reabrir Inspección" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "重新打开验房" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "重新開啟驗屋" } }
+      }
+    },
+    "Report" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Report" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Informe" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "报告" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "報告" } }
+      }
+    },
+    "Report Preview" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Report Preview" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Vista Previa del Informe" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "PDF 报告预览" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "PDF 報告預覽" } }
+      }
+    },
+    "Restore Purchases" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Restore Purchases" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Restaurar Compras" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "恢复购买" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "恢復購買" } }
+      }
+    },
+    "Retry AI Synthesis" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Retry AI Synthesis" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Reintentar Síntesis IA" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "重试 AI 生成" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "重試 AI 生成" } }
+      }
+    },
+    "Roofing" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Roofing" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Techo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "屋顶" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "屋頂" } }
+      }
+    },
+    "Roofing & Flashings" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Roofing & Flashings" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Techos y Tapajuntas" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "屋顶与泛水" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "屋頂與泛水" } }
+      }
+    },
+    "Safety" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Safety" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Seguridad" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "安全隐患" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "安全隱患" } }
+      }
+    },
+    "Safety Hazard" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Safety Hazard" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Riesgo de Seguridad" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "安全隐患" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "安全隱患" } }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Guardar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "儲存" } }
+      }
+    },
+    "Save 42%" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save 42%" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ahorra 42%" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "立省 42%" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "現省 42%" } }
+      }
+    },
+    "Save Finding" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save Finding" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Guardar Hallazgo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存记录" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "儲存記錄" } }
+      }
+    },
+    "Search address or client" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search address or client" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Buscar dirección o cliente" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "搜索房产地址或客户姓名" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "搜尋房產地址或客戶姓名" } }
+      }
+    },
+    "Severity" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Severity" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Gravedad" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "严重程度" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "嚴重程度" } }
+      }
+    },
+    "Share PDF" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share PDF" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Compartir PDF" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "分享 PDF" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "分享 PDF" } }
+      }
+    },
+    "Show All" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Show All" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ver Todo" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示全部" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "顯示全部" } }
+      }
+    },
+    "Site Conditions" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Site Conditions" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Condiciones del Sitio" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "现场环境条件" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "現場環境條件" } }
+      }
+    },
+    "Snap or select up to 4 defect photos, then draw red callouts." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Snap or select up to 4 defect photos, then draw red callouts." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Toma o selecciona hasta 4 fotos y dibuja marcas rojas." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "拍摄或选择最多 4 张缺陷照片，并可用手指画红框/箭头标注。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "拍攝或選擇最多 4 張缺陷照片，並可用手指畫紅框/箭頭標註。" } }
+      }
+    },
+    "Start First Inspection" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Start First Inspection" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Iniciar Primera Inspección" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开始第一次验房" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "開始第一次驗屋" } }
+      }
+    },
+    "State / Provincial License #" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "State / Provincial License #" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "N.º de Licencia Estatal/Provincial" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "州 / 省执业执照号" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "州 / 省執業執照號" } }
+      }
+    },
+    "Stop Voice Memo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Stop Voice Memo" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Detener Nota de Voz" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "停止播放" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "停止播放" } }
+      }
+    },
+    "Structure" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Structure" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Estructura" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "结构" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "結構" } }
+      }
+    },
+    "Subscribe to FieldInspect Pro" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Subscribe to FieldInspect Pro" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Suscribirse a FieldInspect Pro" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "订阅 FieldInspect Pro" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "訂閱 FieldInspect Pro" } }
+      }
+    },
+    "Subscription Notice" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Subscription Notice" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Aviso de Suscripción" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "订阅提示" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "訂閱提示" } }
+      }
+    },
+    "Sync" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizar" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "立即同步" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "立即同步" } }
+      }
+    },
+    "Syncing Offline Queue" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Syncing Offline Queue" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizando Cola Sin Conexión" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在同步离线队列" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "正在同步離線佇列" } }
+      }
+    },
+    "System & Quick Context" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "System & Quick Context" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sistema y Contexto" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "所属系统与快速备注" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "所屬系統與快速備註" } }
+      }
+    },
+    "Take Photo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Take Photo" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Tomar Foto" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "拍摄照片" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "拍攝照片" } }
+      }
+    },
+    "Tap + to start a new residential inspection. Snap defect photos, draw callouts, and dictate findings—even offline." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap + to start a new residential inspection. Snap defect photos, draw callouts, and dictate findings—even offline." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Pulsa + para iniciar una nueva inspección residencial. Toma fotos, dibuja marcas y dicta hallazgos, incluso sin conexión." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "点击右上角 + 开始新的住宅验房。支持现场拍照、红框标注及离线语音口述。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "點擊右上角 + 開始新的住宅驗屋。支援現場拍照、紅框標註及離線語音口述。" } }
+      }
+    },
+    "Tap \"Capture Defect\" below to snap photos, draw red callouts, and dictate a voice memo." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap \"Capture Defect\" below to snap photos, draw red callouts, and dictate a voice memo." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Pulsa \"Registrar Defecto\" abajo para tomar fotos, dibujar marcas rojas y dictar una nota de voz." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "点击下方“采集缺陷”即可拍照、画红框标注并录制语音。" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "點擊下方「採集缺陷」即可拍照、畫紅框標註並錄製語音。" } }
+      }
+    },
+    "Terms of Use (EULA)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Terms of Use (EULA)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Términos de Uso (EULA)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "使用条款 (EULA)" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "使用條款 (EULA)" } }
+      }
+    },
+    "Undo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Undo" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Deshacer" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "撤销" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "復原" } }
+      }
+    },
+    "Unlimited AI Inspection Reports" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unlimited AI Inspection Reports" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Informes de Inspección con IA Ilimitados" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无限次 AI 验房报告" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "無限次 AI 驗屋報告" } }
+      }
+    },
+    "Unlimited properties, AI findings & PDF exports" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unlimited properties, AI findings & PDF exports" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Propiedades, hallazgos IA y PDF ilimitados" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "不限验房数量、AI 分析与 PDF 导出" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "不限驗屋數量、AI 分析與 PDF 匯出" } }
+      }
+    },
+    "Voice Memo & Transcript" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Voice Memo & Transcript" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nota de Voz y Transcripción" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "语音备忘录与转写文本" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "語音備忘錄與轉寫文字" } }
+      }
+    },
+    "Weather" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Weather" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Clima" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "天气状况" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "天氣狀況" } }
+      }
+    },
+    "Year Built" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Year Built" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Año de Construcción" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "建造年份" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "建造年份" } }
+      }
+    },
+    "per month" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "per month" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "por mes" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "每月" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "每月" } }
+      }
+    },
+    "per year" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "per year" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "por año" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "每年" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "每年" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

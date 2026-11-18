@@ -32,6 +32,15 @@ struct PaywallView: View {
                     Button("Close") { dismiss() }
                 }
             }
+            .onChange(of: storeKit.isProActive) { _, isActive in
+                // e.g. an Ask to Buy approval arriving via Transaction.updates while the paywall is open
+                if isActive { dismiss() }
+            }
+            .task {
+                if storeKit.products.isEmpty {
+                    await storeKit.loadProducts()
+                }
+            }
             .alert("Subscription Notice", isPresented: Binding(
                 get: { storeKit.errorMessage != nil },
                 set: { if !$0 { storeKit.errorMessage = nil } }
@@ -52,7 +61,11 @@ struct PaywallView: View {
                 .font(.title2.bold())
                 .multilineTextAlignment(.center)
 
-            Text("You've used your 2 free trial inspections. Upgrade to FieldInspect Pro to unlock unlimited property inspections, multimodal AI narratives, and client-ready PDF exports.")
+            Text(
+                storeKit.lifetimeInspectionsCreated >= AppConfig.StoreKit.freeInspectionLimit
+                ? "You've used your \(AppConfig.StoreKit.freeInspectionLimit) free trial inspections. Upgrade to FieldInspect Pro to unlock unlimited property inspections, multimodal AI narratives, and client-ready PDF exports."
+                : "Includes \(AppConfig.StoreKit.freeInspectionLimit) free full inspections. Upgrade to FieldInspect Pro for unlimited property inspections, multimodal AI narratives, and client-ready PDF exports."
+            )
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -87,21 +100,39 @@ struct PaywallView: View {
 
     private var planSelectorSection: some View {
         VStack(spacing: 12) {
+            // Prices and the savings badge come only from StoreKit, localized to the user's storefront.
+            // Hard-coded "$349.99"/"Save 42%" fallbacks showed wrong prices outside the US and when
+            // products failed to load, which App Review treats as misleading pricing (3.1.2).
             planCard(
                 option: .annual,
                 title: "Annual Pro",
-                price: storeKit.annualProduct?.displayPrice ?? "$349.99",
+                price: storeKit.annualProduct?.displayPrice ?? "—",
                 period: "per year",
-                badge: "Save 42%"
+                badge: storeKit.annualSavingsPercent.map { "Save \($0)%" }
             )
 
             planCard(
                 option: .monthly,
                 title: "Monthly Pro",
-                price: storeKit.monthlyProduct?.displayPrice ?? "$49.99",
+                price: storeKit.monthlyProduct?.displayPrice ?? "—",
                 period: "per month",
                 badge: nil
             )
+
+            if storeKit.products.isEmpty {
+                HStack(spacing: 8) {
+                    if storeKit.isLoadingProducts {
+                        ProgressView()
+                        Text("Loading subscription options…")
+                    } else {
+                        Button("Retry loading prices") {
+                            Task { await storeKit.loadProducts() }
+                        }
+                    }
+                }
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            }
         }
     }
 
@@ -154,13 +185,16 @@ struct PaywallView: View {
     private var ctaSection: some View {
         Button {
             Task {
+                if storeKit.products.isEmpty {
+                    await storeKit.loadProducts()
+                }
                 let targetProduct = selectedPlan == .annual ? storeKit.annualProduct : storeKit.monthlyProduct
                 guard let product = targetProduct else {
-                    await storeKit.loadProducts()
+                    storeKit.errorMessage = "Subscription products are not available yet. Please verify your network connection or App Store Connect product configuration."
                     return
                 }
-                let purchased = await storeKit.purchase(product)
-                if purchased {
+                let outcome = await storeKit.purchase(product)
+                if outcome == .purchased {
                     dismiss()
                 }
             }
@@ -179,7 +213,7 @@ struct PaywallView: View {
             .foregroundStyle(.white)
             .background(DesignSystem.Colors.brandPrimary, in: RoundedRectangle(cornerRadius: DesignSystem.Layout.cornerRadius))
         }
-        .disabled(storeKit.isLoading)
+        .disabled(storeKit.isLoading || storeKit.isLoadingProducts)
     }
 
     private var footerSection: some View {
@@ -194,6 +228,7 @@ struct PaywallView: View {
             }
             .font(.footnote.bold())
             .foregroundStyle(DesignSystem.Colors.brandAccent)
+            .disabled(storeKit.isLoading)
 
             HStack(spacing: 16) {
                 Link("Privacy Policy", destination: AppConfig.Legal.privacyPolicyURL)

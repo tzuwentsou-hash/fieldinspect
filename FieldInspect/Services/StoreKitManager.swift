@@ -7,13 +7,20 @@ import StoreKit
 final class StoreKitManager {
     private(set) var products: [Product] = []
     private(set) var isProActive: Bool = false
+    /// True while a purchase or restore is in flight (drives the paywall CTA spinner).
     private(set) var isLoading: Bool = false
+    /// Separate from `isLoading` so a background product fetch can't flip the purchase spinner off mid-purchase.
+    private(set) var isLoadingProducts: Bool = false
     var errorMessage: String?
 
     @ObservationIgnored private var updatesTask: Task<Void, Never>?
     @ObservationIgnored private var hasStarted = false
+    @ObservationIgnored private let defaults: UserDefaults
 
-    init() {}
+    init(defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+        self.lifetimeInspectionsCreated = defaults.integer(forKey: Self.lifetimeCreatedKey)
+    }
 
     func start() {
         guard !hasStarted else { return }
@@ -37,14 +44,25 @@ final class StoreKitManager {
         products.first { $0.id == AppConfig.StoreKit.annualProductID }
     }
 
+    /// Real savings of the annual plan vs. 12 × monthly in the user's storefront currency,
+    /// e.g. 42 for "Save 42%". Nil until both products are loaded.
+    var annualSavingsPercent: Int? {
+        guard let monthly = monthlyProduct, let annual = annualProduct else { return nil }
+        let yearlyAtMonthlyPrice = monthly.price * 12
+        guard yearlyAtMonthlyPrice > 0 else { return nil }
+        let ratio = NSDecimalNumber(decimal: annual.price / yearlyAtMonthlyPrice).doubleValue
+        let percent = Int(((1 - ratio) * 100).rounded())
+        return percent > 0 ? percent : nil
+    }
+
     /// Lifetime count of inspections created on this device. Counting only the *current* projects let
     /// free users bypass the 2-inspection trial by deleting old inspections.
     private static let lifetimeCreatedKey = "lifetimeInspectionsCreated"
-    private(set) var lifetimeInspectionsCreated: Int = UserDefaults.standard.integer(forKey: StoreKitManager.lifetimeCreatedKey)
+    private(set) var lifetimeInspectionsCreated: Int
 
     func recordInspectionCreated() {
         lifetimeInspectionsCreated += 1
-        UserDefaults.standard.set(lifetimeInspectionsCreated, forKey: Self.lifetimeCreatedKey)
+        defaults.set(lifetimeInspectionsCreated, forKey: Self.lifetimeCreatedKey)
     }
 
     func canExportOrCreateInspection(existingProjectCount: Int) -> Bool {
@@ -54,8 +72,9 @@ final class StoreKitManager {
     }
 
     func loadProducts() async {
-        isLoading = true
-        defer { isLoading = false }
+        guard !isLoadingProducts else { return }
+        isLoadingProducts = true
+        defer { isLoadingProducts = false }
         do {
             let ids = [
                 AppConfig.StoreKit.monthlyProductID,
@@ -63,12 +82,24 @@ final class StoreKitManager {
             ]
             products = try await Product.products(for: ids)
                 .sorted { $0.price < $1.price }
+            if products.isEmpty {
+                errorMessage = "Subscription options are unavailable right now. Please try again later."
+            }
         } catch {
             errorMessage = "Unable to load subscription options: \(error.localizedDescription)"
         }
     }
 
-    func purchase(_ product: Product) async -> Bool {
+    enum PurchaseOutcome: Equatable {
+        case purchased
+        case pending
+        case cancelled
+        case failed
+    }
+
+    @discardableResult
+    func purchase(_ product: Product) async -> PurchaseOutcome {
+        guard !isLoading else { return .failed } // ignore double taps while a purchase sheet is up
         isLoading = true
         defer { isLoading = false }
         do {
@@ -78,38 +109,52 @@ final class StoreKitManager {
                 let transaction = try checkVerified(verification)
                 await transaction.finish()
                 await refreshEntitlements()
-                return true
-            case .userCancelled, .pending:
-                return false
+                return .purchased
+            case .pending:
+                // Ask to Buy / SCA: the purchase completes later and arrives through Transaction.updates.
+                errorMessage = "Your purchase is pending approval. FieldInspect Pro will unlock automatically once it's approved."
+                return .pending
+            case .userCancelled:
+                return .cancelled
             @unknown default:
-                return false
+                return .failed
             }
         } catch {
             errorMessage = "Purchase failed: \(error.localizedDescription)"
-            return false
+            return .failed
         }
     }
 
     func restorePurchases() async {
+        guard !isLoading else { return }
         isLoading = true
         defer { isLoading = false }
         do {
             try await AppStore.sync()
             await refreshEntitlements()
+            if !isProActive {
+                errorMessage = "No active FieldInspect Pro subscription was found for this Apple ID."
+            }
         } catch {
             errorMessage = "Restore failed: \(error.localizedDescription)"
         }
     }
 
+    /// Recomputes Pro access from the current entitlements. Call on launch and whenever the app returns
+    /// to the foreground: an expiry or a refund while the app sits in the background doesn't always arrive
+    /// through `Transaction.updates`, so without this a lapsed subscriber kept Pro until the next cold launch.
     func refreshEntitlements() async {
         var active = false
         for await result in Transaction.currentEntitlements {
-            if case .verified(let transaction) = result,
-               transaction.revocationDate == nil,
-               (transaction.productID == AppConfig.StoreKit.monthlyProductID ||
-                transaction.productID == AppConfig.StoreKit.annualProductID) {
-                active = true
+            guard case .verified(let transaction) = result,
+                  transaction.revocationDate == nil,
+                  transaction.productID == AppConfig.StoreKit.monthlyProductID ||
+                  transaction.productID == AppConfig.StoreKit.annualProductID
+            else { continue }
+            if let expiration = transaction.expirationDate, expiration < Date() {
+                continue
             }
+            active = true
         }
         isProActive = active
     }
@@ -119,8 +164,9 @@ final class StoreKitManager {
             for await result in Transaction.updates {
                 if case .verified(let transaction) = result {
                     await transaction.finish()
-                    await self?.refreshEntitlements()
                 }
+                // Refresh for unverified/revoked updates too, so access is removed when it should be.
+                await self?.refreshEntitlements()
             }
         }
     }

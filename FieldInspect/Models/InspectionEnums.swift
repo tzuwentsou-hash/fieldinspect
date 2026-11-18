@@ -15,27 +15,27 @@ enum BuildingSystem: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .roof: return "Roofing & Flashings"
-        case .exterior: return "Exterior, Siding & Grading"
-        case .structure: return "Foundation & Structure"
-        case .electrical: return "Electrical System"
-        case .hvac: return "Heating, Ventilation & Cooling"
-        case .plumbing: return "Plumbing System"
-        case .interior: return "Interior, Windows & Doors"
-        case .insulation: return "Attic, Insulation & Ventilation"
+        case .roof: return String(localized: "Roofing & Flashings")
+        case .exterior: return String(localized: "Exterior, Siding & Grading")
+        case .structure: return String(localized: "Foundation & Structure")
+        case .electrical: return String(localized: "Electrical System")
+        case .hvac: return String(localized: "Heating, Ventilation & Cooling")
+        case .plumbing: return String(localized: "Plumbing System")
+        case .interior: return String(localized: "Interior, Windows & Doors")
+        case .insulation: return String(localized: "Attic, Insulation & Ventilation")
         }
     }
 
     var shortName: String {
         switch self {
-        case .roof: return "Roofing"
-        case .exterior: return "Exterior"
-        case .structure: return "Structure"
-        case .electrical: return "Electrical"
-        case .hvac: return "HVAC"
-        case .plumbing: return "Plumbing"
-        case .interior: return "Interior"
-        case .insulation: return "Attic & Insulation"
+        case .roof: return String(localized: "Roofing")
+        case .exterior: return String(localized: "Exterior")
+        case .structure: return String(localized: "Structure")
+        case .electrical: return String(localized: "Electrical")
+        case .hvac: return String(localized: "HVAC")
+        case .plumbing: return String(localized: "Plumbing")
+        case .interior: return String(localized: "Interior")
+        case .insulation: return String(localized: "Attic & Insulation")
         }
     }
 
@@ -68,19 +68,19 @@ enum DefectSeverity: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .safetyHazard: return "Safety Hazard"
-        case .majorDefect: return "Major Defect"
-        case .monitor: return "Monitor / Maintenance"
-        case .satisfactory: return "Inspected / Functional"
+        case .safetyHazard: return String(localized: "Safety Hazard")
+        case .majorDefect: return String(localized: "Major Defect")
+        case .monitor: return String(localized: "Monitor / Maintenance")
+        case .satisfactory: return String(localized: "Inspected / Functional")
         }
     }
 
     var shortLabel: String {
         switch self {
-        case .safetyHazard: return "Safety"
-        case .majorDefect: return "Major"
-        case .monitor: return "Monitor"
-        case .satisfactory: return "OK"
+        case .safetyHazard: return String(localized: "Safety")
+        case .majorDefect: return String(localized: "Major")
+        case .monitor: return String(localized: "Monitor")
+        case .satisfactory: return String(localized: "OK")
         }
     }
 
@@ -130,10 +130,10 @@ enum SyncStatus: String, Codable, CaseIterable {
 
     var displayName: String {
         switch self {
-        case .pendingAI: return "Queued for AI (Offline)"
-        case .syncing: return "Analyzing with AI…"
-        case .synced: return "AI Synthesized"
-        case .failed: return "AI Retry Needed"
+        case .pendingAI: return String(localized: "Queued for AI (Offline)")
+        case .syncing: return String(localized: "Analyzing with AI…")
+        case .synced: return String(localized: "AI Synthesized")
+        case .failed: return String(localized: "AI Retry Needed")
         }
     }
 

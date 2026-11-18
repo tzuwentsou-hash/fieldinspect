@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23000" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23000"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BrandLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Spl-Lg-Img">
+                                <rect key="frame" x="76.666666666666671" y="359" width="240" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Img-Wd-Con"/>
+                                    <constraint firstAttribute="height" constant="134" id="Img-Ht-Con"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InterNACHI &amp; ASHI Inspection Reports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-Line-Lbl">
+                                <rect key="frame" x="24" y="713" width="345" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prg-Trk-View">
+                                <rect key="frame" x="126.66666666666669" y="743" width="140" height="3"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14000000059604645" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Trk-Wd-Con"/>
+                                    <constraint firstAttribute="height" constant="3" id="Trk-Ht-Con"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="LaunchBackground"/>
+                        <constraints>
+                            <constraint firstItem="Spl-Lg-Img" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Img-CX-Con"/>
+                            <constraint firstItem="Spl-Lg-Img" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Img-CY-Con"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tag-Line-Lbl" secondAttribute="trailing" constant="24" id="Tag-Tr-Con"/>
+                            <constraint firstItem="Tag-Line-Lbl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Tag-Ld-Con"/>
+                            <constraint firstItem="Prg-Trk-View" firstAttribute="top" secondItem="Tag-Line-Lbl" secondAttribute="bottom" constant="14" id="Trk-Tp-Con"/>
+                            <constraint firstItem="Prg-Trk-View" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Trk-CX-Con"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Prg-Trk-View" secondAttribute="bottom" constant="72" id="Trk-Bt-Con"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BrandLogo" width="240" height="134"/>
+        <namedColor name="LaunchBackground">
+            <color red="0.058823529411764705" green="0.090196078431372548" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
