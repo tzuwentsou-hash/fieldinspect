@@ -46,6 +46,9 @@ struct FieldInspectApp: App {
                         .zIndex(1)
                 }
             }
+            // Format dates/numbers in the app's UI language (en / zh-Hans / zh-Hant / es) with the user's
+            // region, so an unsupported device language (e.g. French) doesn't mix French dates into English UI.
+            .environment(\.locale, AppLocale.locale)
             .task {
                 syncQueue.configure(modelContainer: modelContainer)
                 // When the app is only hosting unit tests, leave StoreKit to the tests' SKTestSession:

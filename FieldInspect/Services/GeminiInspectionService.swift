@@ -31,13 +31,13 @@ enum GeminiServiceError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidResponse:
-            return "Received an invalid response from the AI service."
+            return String(localized: "Received an invalid response from the AI service.")
         case .serverError(let statusCode, let message):
-            return "AI service error (\(statusCode)): \(message)"
+            return String(localized: "AI service error (\(statusCode)): \(message)")
         case .emptyContent:
-            return "AI returned an empty analysis."
+            return String(localized: "AI returned an empty analysis.")
         case .missingMedia:
-            return "At least one photo, voice memo, or text note is required for AI analysis."
+            return String(localized: "At least one photo, voice memo, or text note is required for AI analysis.")
         }
     }
 }
@@ -57,7 +57,8 @@ final class GeminiInspectionService: Sendable {
         audioMemoData: Data?,
         propertyType: PropertyType,
         yearBuilt: Int,
-        inspectorHintNotes: String? = nil
+        inspectorHintNotes: String? = nil,
+        outputLanguage: String = AppLocale.aiOutputLanguage
     ) async throws -> GeminiDefectResponse {
         // The capture sheet allows saving a finding with only a typed note ("if unable to speak"),
         // so a text note alone is valid input for synthesis.
@@ -71,7 +72,8 @@ final class GeminiInspectionService: Sendable {
             audioMemoData: audioMemoData,
             propertyType: propertyType,
             yearBuilt: yearBuilt,
-            inspectorHintNotes: inspectorHintNotes
+            inspectorHintNotes: inspectorHintNotes,
+            outputLanguage: outputLanguage
         )
 
         var request = URLRequest(url: AppConfig.geminiProxyEndpoint)
@@ -96,17 +98,19 @@ final class GeminiInspectionService: Sendable {
         return try decodeResponse(from: data)
     }
 
-    private func buildRequestPayload(
+    func buildRequestPayload(
         photos: [Data],
         audioMemoData: Data?,
         propertyType: PropertyType,
         yearBuilt: Int,
-        inspectorHintNotes: String?
+        inspectorHintNotes: String?,
+        outputLanguage: String
     ) throws -> [String: Any] {
         var metadata: [String: Any] = [
             "property_type": propertyType.rawValue,
             "year_built": yearBuilt,
-            "inspector_notes_language": "English"
+            // Narrative fields must come back in the app's UI language (en / zh-Hans / zh-Hant / es).
+            "output_language": outputLanguage
         ]
         if let hint = inspectorHintNotes, !hint.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             metadata["inspector_text_notes"] = hint
@@ -141,7 +145,7 @@ final class GeminiInspectionService: Sendable {
             "model": AppConfig.geminiModel,
             "systemInstruction": [
                 "parts": [
-                    ["text": Self.productionSystemInstruction]
+                    ["text": Self.systemInstruction(outputLanguage: outputLanguage)]
                 ]
             ],
             "contents": [
@@ -201,10 +205,10 @@ final class GeminiInspectionService: Sendable {
        - NEVER fabricate defects not supported by either the audio or the photo.
 
     2. INTERNACHI / ASHI DEFENSIBLE WRITING STYLE (LIABILITY SHIELD):
-       - Write in clear, objective, third-person professional English suitable for homebuyers and real estate agents.
+       - Write in clear, objective, third-person professional prose in the OUTPUT LANGUAGE (see rule 5) suitable for homebuyers and real estate agents.
        - Avoid absolute guarantees, code-violation legal rulings (unless explicitly stated by the inspector), or cost estimates unless spoken.
        - ALWAYS conclude the `recommendation` field with standard InterNACHI liability-protective phrasing naming the appropriate licensed trade specialist:
-         - Example: "Recommend further evaluation and repair or replacement as needed by a qualified, licensed electrical contractor prior to closing."
+         - Example: "Recommend further evaluation and repair or replacement as needed by a qualified, licensed electrical contractor prior to closing." (translate this phrasing naturally when the OUTPUT LANGUAGE is not English)
        - Structure `observation_narrative` as: [Component & Location] + [Specific Observed Condition/Defect] + [Potential Consequence/Risk if Uncorrected].
 
     3. SEVERITY CLASSIFICATION LOGIC:
@@ -217,6 +221,21 @@ final class GeminiInspectionService: Sendable {
        - Map the finding to one of the 8 exact `building_system` enum keys.
        - Extract a concise, specific `location` string (e.g., "Basement — Main Electrical Panel", "Exterior — North Elevation Roof Eave", "Master Bathroom — Under Sink").
     """
+
+    /// Full system instruction with the output-language rule appended.
+    static func systemInstruction(outputLanguage: String) -> String {
+        productionSystemInstruction + """
+
+
+        5. OUTPUT LANGUAGE:
+           - The OUTPUT LANGUAGE is: \(outputLanguage). It is also given as `output_language` in the request metadata.
+           - Write `defect_title`, `location`, `observation_narrative`, `recommendation`, and `visual_observations_added` entirely in the OUTPUT LANGUAGE, whatever language the inspector spoke or typed.
+           - For Traditional Chinese use Traditional characters only (never Simplified); for Simplified Chinese use Simplified characters only.
+           - `raw_transcript` stays a verbatim transcription in the language actually spoken — do not translate it.
+           - `building_system` and `severity` must remain the exact English enum keys listed in the schema.
+           - Brand names, standards, and model numbers (InterNACHI, ASHI, Square D, 200-amp) stay as written.
+        """
+    }
 
     static let responseSchema: [String: Any] = [
         "type": "OBJECT",

@@ -4,37 +4,117 @@
     "CFBundleDisplayName" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect" } },
-        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect" } }
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect"
+          }
+        }
       }
     },
     "NSCameraUsageDescription" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect uses the camera to capture property exterior and defect photos on-site." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect usa la cámara para tomar fotos del exterior y defectos de la propiedad en el sitio." } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect 需要使用相机在现场拍摄房屋外观和缺陷照片。" } },
-        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect 需要使用相機在現場拍攝房屋外觀和缺陷照片。" } }
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect uses the camera to capture property exterior and defect photos on-site."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect usa la cámara para tomar fotos del exterior y defectos de la propiedad en el sitio."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect 需要使用相机在现场拍摄房屋外观和缺陷照片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect 需要使用相機在現場拍攝房屋外觀和缺陷照片。"
+          }
+        }
       }
     },
     "NSMicrophoneUsageDescription" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect uses the microphone to record inspector voice memos for AI defect synthesis." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect usa el micrófono para grabar notas de voz del inspector y generar informes con IA." } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect 需要使用麦克风录制验房师语音备忘录，用于 AI 生成缺陷报告。" } },
-        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect 需要使用麥克風錄製驗屋師語音備忘錄，用於 AI 生成缺陷報告。" } }
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect uses the microphone to record inspector voice memos for AI defect synthesis."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect usa el micrófono para grabar notas de voz del inspector y generar informes con IA."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect 需要使用麦克风录制验房师语音备忘录，用于 AI 生成缺陷报告。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect 需要使用麥克風錄製驗屋師語音備忘錄，用於 AI 產生缺失報告。"
+          }
+        }
       }
     },
     "NSPhotoLibraryUsageDescription" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect accesses your photo library to attach existing inspection photos to defect entries." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect accede a tu fototeca para adjuntar fotos de inspección existentes a los defectos." } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect 需要访问您的相册，以将已有验房照片添加到缺陷记录中。" } },
-        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "FieldInspect 需要存取您的相簿，以將已有驗屋照片添加到缺陷記錄中。" } }
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect accesses your photo library to attach existing inspection photos to defect entries."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect accede a tu fototeca para adjuntar fotos de inspección existentes a los defectos."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect 需要访问您的相册，以将已有验房照片添加到缺陷记录中。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FieldInspect 需要存取您的相簿，以將已有驗屋照片加入缺失記錄中。"
+          }
+        }
       }
     }
   },

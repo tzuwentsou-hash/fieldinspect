@@ -11,8 +11,8 @@ struct NewInspectionSheet: View {
     @State private var clientName = ""
     @State private var propertyType: PropertyType = .singleFamily
     @State private var yearBuilt: Int = 1995
-    @State private var weatherConditions = "Clear"
-    @State private var ambientTemperature = "68°F"
+    @State private var weatherConditions = WeatherCondition.clear.rawValue
+    @State private var ambientTemperature = WeatherCondition.defaultAmbientTemperature
 
     @AppStorage("inspectorName") private var savedInspectorName = ""
     @AppStorage("companyName") private var savedCompanyName = ""
@@ -26,8 +26,6 @@ struct NewInspectionSheet: View {
     @State private var coverPhotoData: Data?
     @State private var showingCamera = false
 
-    private let weatherOptions = ["Clear", "Partly Cloudy", "Overcast", "Light Rain", "Heavy Rain", "Snow / Cold"]
-
     var body: some View {
         NavigationStack {
             Form {
@@ -38,14 +36,15 @@ struct NewInspectionSheet: View {
                         .textContentType(.name)
                     Picker("Property Type", selection: $propertyType) {
                         ForEach(PropertyType.allCases) { type in
-                            Text(type.rawValue).tag(type)
+                            Text(type.displayName).tag(type)
                         }
                     }
                     Stepper(value: $yearBuilt, in: 1850...2030) {
                         HStack {
                             Text("Year Built")
                             Spacer()
-                            Text("\(yearBuilt)")
+                            // Verbatim: a localized Int would render the year as "1,995".
+                            Text(verbatim: String(yearBuilt))
                                 .font(DesignSystem.Typography.monospacedHeadline())
                                 .foregroundStyle(.secondary)
                         }
@@ -54,8 +53,8 @@ struct NewInspectionSheet: View {
 
                 Section("Site Conditions") {
                     Picker("Weather", selection: $weatherConditions) {
-                        ForEach(weatherOptions, id: \.self) { option in
-                            Text(option).tag(option)
+                        ForEach(WeatherCondition.allCases) { option in
+                            Text(option.displayName).tag(option.rawValue)
                         }
                     }
                     TextField("Ambient Temperature (e.g. 68°F)", text: $ambientTemperature)

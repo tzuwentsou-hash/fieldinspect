@@ -117,11 +117,11 @@ struct DefectCaptureSheet: View {
                             Button {
                                 selectedTool = tool
                             } label: {
-                                Label(tool.rawValue, systemImage: tool.sfSymbol)
+                                Label(tool.displayName, systemImage: tool.sfSymbol)
                             }
                         }
                     } label: {
-                        Label(selectedTool.rawValue, systemImage: selectedTool.sfSymbol)
+                        Label(selectedTool.displayName, systemImage: selectedTool.sfSymbol)
                             .font(.caption.bold())
                             .padding(.horizontal, 10)
                             .padding(.vertical, 6)
@@ -409,7 +409,7 @@ struct DefectCaptureSheet: View {
             severity: selectedSeverity,
             syncStatus: .pendingAI,
             location: quickLocation.trimmingCharacters(in: .whitespacesAndNewlines),
-            defectTitle: trimmedNotes.isEmpty ? "\(selectedSystem.shortName) Finding" : String(trimmedNotes.prefix(48)),
+            defectTitle: trimmedNotes.isEmpty ? String(localized: "\(selectedSystem.shortName) Finding") : String(trimmedNotes.prefix(48)),
             observationNarrative: trimmedNotes,
             recommendation: "",
             photos: bakedPhotos,

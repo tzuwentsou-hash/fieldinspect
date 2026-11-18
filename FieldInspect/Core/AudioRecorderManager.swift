@@ -42,7 +42,7 @@ final class AudioRecorderManager: NSObject {
             guard granted else {
                 isHoldActive = false
                 permissionDenied = true
-                errorMessage = "Microphone access is required to dictate defect findings."
+                errorMessage = String(localized: "Microphone access is required to dictate defect findings.")
                 return
             }
             permissionDenied = false
@@ -70,7 +70,7 @@ final class AudioRecorderManager: NSObject {
             try session.setCategory(.playAndRecord, mode: .spokenAudio, options: [.defaultToSpeaker, .allowBluetoothHFP])
             try session.setActive(true)
         } catch {
-            errorMessage = "Audio session error: \(error.localizedDescription)"
+            errorMessage = String(localized: "Audio session error: \(error.localizedDescription)")
             return
         }
 
@@ -99,10 +99,10 @@ final class AudioRecorderManager: NSObject {
                 isRecording = true
                 errorMessage = nil
             } else {
-                errorMessage = "Unable to start voice recording."
+                errorMessage = String(localized: "Unable to start voice recording.")
             }
         } catch {
-            errorMessage = "Recorder setup failed: \(error.localizedDescription)"
+            errorMessage = String(localized: "Recorder setup failed: \(error.localizedDescription)")
         }
     }
 
@@ -149,7 +149,7 @@ final class AudioRecorderManager: NSObject {
                 isPlaying = true
             }
         } catch {
-            errorMessage = "Playback failed: \(error.localizedDescription)"
+            errorMessage = String(localized: "Playback failed: \(error.localizedDescription)")
         }
     }
 
@@ -208,7 +208,7 @@ extension AudioRecorderManager: AVAudioRecorderDelegate {
         Task { @MainActor in
             if !flag {
                 self.isRecording = false
-                self.errorMessage = "Recording ended unexpectedly."
+                self.errorMessage = String(localized: "Recording ended unexpectedly.")
             }
         }
     }

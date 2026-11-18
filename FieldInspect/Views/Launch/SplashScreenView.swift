@@ -115,12 +115,12 @@ struct SplashScreenView: View {
 
             VStack(spacing: 10) {
                 HStack(spacing: 8) {
-                    Text("FieldInspect")
+                    Text(verbatim: "FieldInspect")
                         .font(.system(size: 32, weight: .bold, design: .default))
                         .tracking(-0.5)
                         .foregroundStyle(.white)
 
-                    Text("AI")
+                    Text(verbatim: "AI")
                         .font(.system(size: 16, weight: .heavy, design: .rounded))
                         .foregroundStyle(.white)
                         .padding(.horizontal, 9)

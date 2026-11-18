@@ -1,32 +1,46 @@
 {
   "identifier" : "A1B2C3D4-E5F6-4789-ABCD-0123456789AB",
-  "nonRenewingSubscriptions" : [
-
-  ],
-  "products" : [
-
-  ],
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
   "settings" : {
     "_failTransactionsEnabled" : false,
-    "_storeKitErrors" : [
-
-    ]
+    "_storeKitErrors" : []
   },
   "subscriptionGroups" : [
     {
       "id" : "21500001",
       "localizations" : [
-
+        {
+          "description" : "",
+          "displayName" : "FieldInspect Pro",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "",
+          "displayName" : "FieldInspect Pro",
+          "locale" : "zh_Hans"
+        },
+        {
+          "description" : "",
+          "displayName" : "FieldInspect Pro",
+          "locale" : "zh_Hant"
+        },
+        {
+          "description" : "",
+          "displayName" : "FieldInspect Pro",
+          "locale" : "es_MX"
+        },
+        {
+          "description" : "",
+          "displayName" : "FieldInspect Pro",
+          "locale" : "es_ES"
+        }
       ],
       "name" : "FieldInspect Pro",
       "subscriptions" : [
         {
-          "adHocOffers" : [
-
-          ],
-          "codeOffers" : [
-
-          ],
+          "adHocOffers" : [],
+          "codeOffers" : [],
           "displayPrice" : "49.99",
           "familyShareable" : false,
           "groupNumber" : 1,
@@ -37,6 +51,26 @@
               "description" : "Unlimited residential inspections, Gemini AI synthesis, and PDF reports.",
               "displayName" : "FieldInspect Pro Monthly",
               "locale" : "en_US"
+            },
+            {
+              "description" : "无限次住宅验房、Gemini AI 智能分析及 PDF 报告。",
+              "displayName" : "FieldInspect Pro 月度订阅",
+              "locale" : "zh_Hans"
+            },
+            {
+              "description" : "無限次住宅驗屋、Gemini AI 智慧分析及 PDF 報告。",
+              "displayName" : "FieldInspect Pro 月繳訂閱",
+              "locale" : "zh_Hant"
+            },
+            {
+              "description" : "Inspecciones residenciales ilimitadas, análisis con Gemini IA e informes PDF.",
+              "displayName" : "FieldInspect Pro Mensual",
+              "locale" : "es_MX"
+            },
+            {
+              "description" : "Inspecciones residenciales ilimitadas, análisis con Gemini IA e informes PDF.",
+              "displayName" : "FieldInspect Pro Mensual",
+              "locale" : "es_ES"
             }
           ],
           "productID" : "com.fieldinspect.ai.pro.monthly",
@@ -46,12 +80,8 @@
           "type" : "RecurringSubscription"
         },
         {
-          "adHocOffers" : [
-
-          ],
-          "codeOffers" : [
-
-          ],
+          "adHocOffers" : [],
+          "codeOffers" : [],
           "displayPrice" : "349.99",
           "familyShareable" : false,
           "groupNumber" : 1,
@@ -62,6 +92,26 @@
               "description" : "Unlimited residential inspections, Gemini AI synthesis, and PDF reports (Save 42%).",
               "displayName" : "FieldInspect Pro Annual",
               "locale" : "en_US"
+            },
+            {
+              "description" : "无限次住宅验房、Gemini AI 智能分析及 PDF 报告（立省 42%）。",
+              "displayName" : "FieldInspect Pro 年度订阅",
+              "locale" : "zh_Hans"
+            },
+            {
+              "description" : "無限次住宅驗屋、Gemini AI 智慧分析及 PDF 報告（現省 42%）。",
+              "displayName" : "FieldInspect Pro 年繳訂閱",
+              "locale" : "zh_Hant"
+            },
+            {
+              "description" : "Inspecciones residenciales ilimitadas, análisis con Gemini IA e informes PDF (ahorra 42 %).",
+              "displayName" : "FieldInspect Pro Anual",
+              "locale" : "es_MX"
+            },
+            {
+              "description" : "Inspecciones residenciales ilimitadas, análisis con Gemini IA e informes PDF (ahorra un 42 %).",
+              "displayName" : "FieldInspect Pro Anual",
+              "locale" : "es_ES"
             }
           ],
           "productID" : "com.fieldinspect.ai.pro.annual",

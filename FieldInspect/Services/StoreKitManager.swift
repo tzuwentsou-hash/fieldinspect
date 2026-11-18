@@ -83,10 +83,10 @@ final class StoreKitManager {
             products = try await Product.products(for: ids)
                 .sorted { $0.price < $1.price }
             if products.isEmpty {
-                errorMessage = "Subscription options are unavailable right now. Please try again later."
+                errorMessage = String(localized: "Subscription options are unavailable right now. Please try again later.")
             }
         } catch {
-            errorMessage = "Unable to load subscription options: \(error.localizedDescription)"
+            errorMessage = String(localized: "Unable to load subscription options: \(error.localizedDescription)")
         }
     }
 
@@ -112,7 +112,7 @@ final class StoreKitManager {
                 return .purchased
             case .pending:
                 // Ask to Buy / SCA: the purchase completes later and arrives through Transaction.updates.
-                errorMessage = "Your purchase is pending approval. FieldInspect Pro will unlock automatically once it's approved."
+                errorMessage = String(localized: "Your purchase is pending approval. FieldInspect Pro will unlock automatically once it's approved.")
                 return .pending
             case .userCancelled:
                 return .cancelled
@@ -120,7 +120,7 @@ final class StoreKitManager {
                 return .failed
             }
         } catch {
-            errorMessage = "Purchase failed: \(error.localizedDescription)"
+            errorMessage = String(localized: "Purchase failed: \(error.localizedDescription)")
             return .failed
         }
     }
@@ -133,10 +133,10 @@ final class StoreKitManager {
             try await AppStore.sync()
             await refreshEntitlements()
             if !isProActive {
-                errorMessage = "No active FieldInspect Pro subscription was found for this Apple ID."
+                errorMessage = String(localized: "No active FieldInspect Pro subscription was found for this Apple ID.")
             }
         } catch {
-            errorMessage = "Restore failed: \(error.localizedDescription)"
+            errorMessage = String(localized: "Restore failed: \(error.localizedDescription)")
         }
     }
 

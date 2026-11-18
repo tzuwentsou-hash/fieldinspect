@@ -198,7 +198,7 @@ private struct InspectionProjectRow: View {
             }
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(project.propertyAddress.isEmpty ? "Untitled Property" : project.propertyAddress)
+                Text(project.propertyAddress.isEmpty ? String(localized: "Untitled Property") : project.propertyAddress)
                     .font(.headline)
                     .lineLimit(1)
 
@@ -217,9 +217,9 @@ private struct InspectionProjectRow: View {
                 }
 
                 HStack(spacing: 8) {
-                    miniCountBadge(count: project.count(for: .safetyHazard), color: DesignSystem.Colors.severitySafetyHazard, label: "Safety")
-                    miniCountBadge(count: project.count(for: .majorDefect), color: DesignSystem.Colors.severityMajorDefect, label: "Major")
-                    miniCountBadge(count: project.count(for: .monitor), color: DesignSystem.Colors.severityMonitor, label: "Monitor")
+                    miniCountBadge(count: project.count(for: .safetyHazard), color: DesignSystem.Colors.severitySafetyHazard, label: DefectSeverity.safetyHazard.shortLabel)
+                    miniCountBadge(count: project.count(for: .majorDefect), color: DesignSystem.Colors.severityMajorDefect, label: DefectSeverity.majorDefect.shortLabel)
+                    miniCountBadge(count: project.count(for: .monitor), color: DesignSystem.Colors.severityMonitor, label: DefectSeverity.monitor.shortLabel)
 
                     if project.pendingAICount > 0 {
                         Text("\(project.pendingAICount) Queued")

@@ -151,9 +151,9 @@ enum PDFReportGenerator {
             drawAspectFit(image: brandLogo, in: logoRect)
         }
 
-        let companyText = project.companyName.isEmpty ? "FieldInspect Certified Home Inspections" : project.companyName
+        let companyText = project.companyName.isEmpty ? String(localized: "FieldInspect Certified Home Inspections") : project.companyName
         drawText(
-            companyText.uppercased(),
+            companyText.uppercased(with: locale),
             font: .systemFont(ofSize: 12, weight: .bold),
             color: amber,
             rect: CGRect(x: margin, y: y, width: titleWidth, height: 18)
@@ -161,7 +161,7 @@ enum PDFReportGenerator {
         y += 22
 
         drawText(
-            "RESIDENTIAL PROPERTY INSPECTION REPORT",
+            String(localized: "RESIDENTIAL PROPERTY INSPECTION REPORT"),
             font: .systemFont(ofSize: 20, weight: .heavy),
             color: slate,
             rect: CGRect(x: margin, y: y, width: titleWidth, height: 32)
@@ -188,7 +188,7 @@ enum PDFReportGenerator {
             UIGraphicsGetCurrentContext()?.restoreGState()
         } else {
             drawText(
-                "No Cover Photo Captured",
+                String(localized: "No Cover Photo Captured"),
                 font: .systemFont(ofSize: 13, weight: .medium),
                 color: muted,
                 rect: CGRect(x: margin, y: y + heroHeight / 2 - 10, width: contentWidth, height: 20),
@@ -207,16 +207,19 @@ enum PDFReportGenerator {
         metaPath.stroke()
 
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = locale
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
 
+        let inspectorName = project.inspectorName.isEmpty ? String(localized: "Certified Inspector") : project.inspectorName
+        let license = project.licenseNumber.isEmpty ? String(localized: "N/A") : project.licenseNumber
         let rows: [(String, String)] = [
-            ("Property Address:", project.propertyAddress.isEmpty ? "Unspecified Address" : project.propertyAddress),
-            ("Client Name:", project.clientName.isEmpty ? "Unspecified Client" : project.clientName),
-            ("Inspection Date:", dateFormatter.string(from: project.inspectionDate)),
-            ("Property Details:", "\(project.propertyType.rawValue) • Built \(project.yearBuilt)"),
-            ("Weather / Temp:", "\(project.weatherConditions) • \(project.ambientTemperature)"),
-            ("Inspector:", "\(project.inspectorName.isEmpty ? "Certified Inspector" : project.inspectorName) (Lic: \(project.licenseNumber.isEmpty ? "N/A" : project.licenseNumber))")
+            (String(localized: "Property Address:"), project.propertyAddress.isEmpty ? String(localized: "Unspecified Address") : project.propertyAddress),
+            (String(localized: "Client Name:"), project.clientName.isEmpty ? String(localized: "Unspecified Client") : project.clientName),
+            (String(localized: "Inspection Date:"), dateFormatter.string(from: project.inspectionDate)),
+            (String(localized: "Property Details:"), String(localized: "\(project.propertyType.displayName) • Built \(String(project.yearBuilt))")),
+            (String(localized: "Weather / Temp:"), "\(WeatherCondition.displayName(for: project.weatherConditions)) • \(project.ambientTemperature)"),
+            (String(localized: "Inspector:"), String(localized: "\(inspectorName) (Lic: \(license))"))
         ]
 
         var rowY = y + 16
@@ -229,13 +232,11 @@ enum PDFReportGenerator {
         y += 200
 
         // Standard InterNACHI Scope & Limitations Disclaimer
-        let disclaimerTitle = "SCOPE & LIMITATIONS (InterNACHI / ASHI STANDARDS OF PRACTICE)"
+        let disclaimerTitle = String(localized: "SCOPE & LIMITATIONS (InterNACHI / ASHI STANDARDS OF PRACTICE)")
         drawText(disclaimerTitle, font: .systemFont(ofSize: 10, weight: .bold), color: slate, rect: CGRect(x: margin, y: y, width: contentWidth, height: 16))
         y += 18
 
-        let disclaimerBody = """
-        This residential inspection report is a visual, non-invasive evaluation of the readily accessible building systems and components as observed on the date of inspection. It is performed in accordance with InterNACHI Standards of Practice and is not a building code compliance audit, engineering study, or warranty/guarantee of future performance. Concealed, latent, or inaccessible defects are excluded. Any safety hazards or major defects identified herein should be further evaluated and repaired by qualified, licensed trade specialists prior to closing.
-        """
+        let disclaimerBody = String(localized: "This residential inspection report is a visual, non-invasive evaluation of the readily accessible building systems and components as observed on the date of inspection. It is performed in accordance with InterNACHI Standards of Practice and is not a building code compliance audit, engineering study, or warranty/guarantee of future performance. Concealed, latent, or inaccessible defects are excluded. Any safety hazards or major defects identified herein should be further evaluated and repaired by qualified, licensed trade specialists prior to closing.")
         drawText(
             disclaimerBody,
             font: .systemFont(ofSize: 9.5, weight: .regular),
@@ -252,7 +253,7 @@ enum PDFReportGenerator {
         var y = margin
 
         drawText(
-            "EXECUTIVE SUMMARY",
+            String(localized: "EXECUTIVE SUMMARY"),
             font: .systemFont(ofSize: 18, weight: .heavy),
             color: slate,
             rect: CGRect(x: margin, y: y, width: contentWidth, height: 26)
@@ -260,7 +261,7 @@ enum PDFReportGenerator {
         y += 30
 
         drawText(
-            "Priority overview for buyer and real estate agent review. Refer to the referenced pages for full photographic documentation and recommendations.",
+            String(localized: "Priority overview for buyer and real estate agent review. Refer to the referenced pages for full photographic documentation and recommendations."),
             font: .systemFont(ofSize: 10.5, weight: .regular),
             color: muted,
             rect: CGRect(x: margin, y: y, width: contentWidth, height: 30)
@@ -269,9 +270,9 @@ enum PDFReportGenerator {
 
         // Summary Count Badges
         let counts: [(String, Int, UIColor)] = [
-            ("Safety Hazards", project.count(for: .safetyHazard), DefectSeverity.safetyHazard.uiColor),
-            ("Major Defects", project.count(for: .majorDefect), DefectSeverity.majorDefect.uiColor),
-            ("Maintenance Items", project.count(for: .monitor), DefectSeverity.monitor.uiColor)
+            (String(localized: "Safety Hazards"), project.count(for: .safetyHazard), DefectSeverity.safetyHazard.uiColor),
+            (String(localized: "Major Defects"), project.count(for: .majorDefect), DefectSeverity.majorDefect.uiColor),
+            (String(localized: "Maintenance Items"), project.count(for: .monitor), DefectSeverity.monitor.uiColor)
         ]
 
         let boxWidth = (contentWidth - 20) / 3
@@ -286,14 +287,14 @@ enum PDFReportGenerator {
             path.stroke()
 
             drawText(
-                "\(item.1)",
+                item.1.formatted(.number.locale(locale)),
                 font: .monospacedDigitSystemFont(ofSize: 24, weight: .heavy),
                 color: item.2,
                 rect: CGRect(x: x + 10, y: y + 10, width: boxWidth - 20, height: 28),
                 alignment: .center
             )
             drawText(
-                item.0.uppercased(),
+                item.0.uppercased(with: locale),
                 font: .systemFont(ofSize: 9, weight: .bold),
                 color: slate,
                 rect: CGRect(x: x + 6, y: y + 40, width: boxWidth - 12, height: 16),
@@ -313,7 +314,7 @@ enum PDFReportGenerator {
             }
 
         drawText(
-            "PRIORITY FINDINGS INDEX (SAFETY HAZARDS & MAJOR DEFECTS)",
+            String(localized: "PRIORITY FINDINGS INDEX (SAFETY HAZARDS & MAJOR DEFECTS)"),
             font: .systemFont(ofSize: 11, weight: .bold),
             color: slate,
             rect: CGRect(x: margin, y: y, width: contentWidth, height: 18)
@@ -322,7 +323,7 @@ enum PDFReportGenerator {
 
         if priorityDefects.isEmpty {
             drawText(
-                "No Safety Hazards or Major Defects were recorded during this inspection.",
+                String(localized: "No Safety Hazards or Major Defects were recorded during this inspection."),
                 font: .systemFont(ofSize: 11, weight: .medium),
                 color: muted,
                 rect: CGRect(x: margin, y: y, width: contentWidth, height: 22)
@@ -335,16 +336,16 @@ enum PDFReportGenerator {
         slate.setFill()
         UIBezierPath(rect: headerRect).fill()
 
-        drawText("SEVERITY", font: .systemFont(ofSize: 9, weight: .bold), color: .white, rect: CGRect(x: margin + 8, y: y + 5, width: 85, height: 14))
-        drawText("LOCATION", font: .systemFont(ofSize: 9, weight: .bold), color: .white, rect: CGRect(x: margin + 98, y: y + 5, width: 150, height: 14))
-        drawText("FINDING HEADLINE", font: .systemFont(ofSize: 9, weight: .bold), color: .white, rect: CGRect(x: margin + 254, y: y + 5, width: 220, height: 14))
-        drawText("PAGE", font: .systemFont(ofSize: 9, weight: .bold), color: .white, rect: CGRect(x: margin + 480, y: y + 5, width: 44, height: 14), alignment: .right)
+        drawText(String(localized: "SEVERITY"), font: .systemFont(ofSize: 9, weight: .bold), color: .white, rect: CGRect(x: margin + 8, y: y + 5, width: 85, height: 14))
+        drawText(String(localized: "LOCATION"), font: .systemFont(ofSize: 9, weight: .bold), color: .white, rect: CGRect(x: margin + 98, y: y + 5, width: 150, height: 14))
+        drawText(String(localized: "FINDING HEADLINE"), font: .systemFont(ofSize: 9, weight: .bold), color: .white, rect: CGRect(x: margin + 254, y: y + 5, width: 220, height: 14))
+        drawText(String(localized: "PAGE"), font: .systemFont(ofSize: 9, weight: .bold), color: .white, rect: CGRect(x: margin + 480, y: y + 5, width: 44, height: 14), alignment: .right)
         y += 22
 
         for (idx, defect) in priorityDefects.enumerated() {
             if y + 26 > pageBottomMargin {
                 drawText(
-                    "Additional priority items are detailed in the system sections.",
+                    String(localized: "Additional priority items are detailed in the system sections."),
                     font: .italicSystemFont(ofSize: 9.5),
                     color: muted,
                     rect: CGRect(x: margin, y: y + 4, width: contentWidth, height: 16)
@@ -358,11 +359,11 @@ enum PDFReportGenerator {
                 UIBezierPath(rect: rowRect).fill()
             }
 
-            let title = defect.defectTitle.isEmpty ? "Untitled Finding" : defect.defectTitle
+            let title = defect.defectTitle.isEmpty ? String(localized: "Untitled Finding") : defect.defectTitle
             let loc = defect.location.isEmpty ? defect.buildingSystem.shortName : defect.location
-            let pageNum = pageRefs[defect.id].map { "p. \($0)" } ?? "—"
+            let pageNum = pageRefs[defect.id].map { String(localized: "p. \($0)") } ?? "—"
 
-            drawText(defect.severity.shortLabel.uppercased(), font: .systemFont(ofSize: 9, weight: .bold), color: defect.severity.uiColor, rect: CGRect(x: margin + 8, y: y + 6, width: 85, height: 16))
+            drawText(defect.severity.shortLabel.uppercased(with: locale), font: .systemFont(ofSize: 9, weight: .bold), color: defect.severity.uiColor, rect: CGRect(x: margin + 8, y: y + 6, width: 85, height: 16))
             drawText(loc, font: .systemFont(ofSize: 9.5, weight: .medium), color: slate, rect: CGRect(x: margin + 98, y: y + 6, width: 150, height: 16))
             drawText(title, font: .systemFont(ofSize: 9.5, weight: .semibold), color: slate, rect: CGRect(x: margin + 254, y: y + 6, width: 220, height: 16))
             drawText(pageNum, font: .monospacedDigitSystemFont(ofSize: 9.5, weight: .bold), color: muted, rect: CGRect(x: margin + 480, y: y + 6, width: 44, height: 16), alignment: .right)
@@ -381,7 +382,7 @@ enum PDFReportGenerator {
         path.fill()
 
         drawText(
-            system.displayName.uppercased(),
+            system.displayName.uppercased(with: locale),
             font: .systemFont(ofSize: 12.5, weight: .heavy),
             color: .white,
             rect: CGRect(x: margin + 12, y: y + 9, width: contentWidth - 24, height: 18)
@@ -408,17 +409,17 @@ enum PDFReportGenerator {
         // Measuring with a plain regular font under-estimated wrapped lines, clipping the last line
         // of text and shifting page references in the Executive Summary.
         let slate = UIColor(red: 0.118, green: 0.161, blue: 0.231, alpha: 1.0)
-        let observation = entry.observationNarrative.isEmpty ? "No observation narrative recorded." : entry.observationNarrative
+        let observation = entry.observationNarrative.isEmpty ? String(localized: "No observation narrative recorded.") : entry.observationNarrative
         let obsHeight = measureAttributedHeight(
-            labeledAttributedString(label: "Observation: ", body: observation, slate: slate),
+            labeledAttributedString(label: observationLabel, body: observation, slate: slate),
             width: innerWidth
         )
         height += obsHeight + 8
 
         // Recommendation text
-        let recommendation = entry.recommendation.isEmpty ? "Monitor and consult a qualified licensed specialist if condition worsens." : entry.recommendation
+        let recommendation = entry.recommendation.isEmpty ? defaultRecommendation : entry.recommendation
         let recHeight = measureAttributedHeight(
-            labeledAttributedString(label: "Recommendation: ", body: recommendation, slate: slate),
+            labeledAttributedString(label: recommendationLabel, body: recommendation, slate: slate),
             width: innerWidth
         )
         height += recHeight + 14
@@ -455,15 +456,15 @@ enum PDFReportGenerator {
         entry.severity.uiColor.setFill()
         pillPath.fill()
         drawText(
-            entry.severity.displayName.uppercased(),
-            font: .systemFont(ofSize: 8.5, weight: .bold),
+            entry.severity.displayName.uppercased(with: locale),
+            font: fittedFont(for: entry.severity.displayName.uppercased(with: locale), size: 8.5, weight: .bold, maxWidth: pillWidth - 8),
             color: .white,
             rect: CGRect(x: innerX + 4, y: cursorY + 4, width: pillWidth - 8, height: 13),
             alignment: .center
         )
 
         // Headline & Location
-        let title = entry.defectTitle.isEmpty ? "Inspection Finding" : entry.defectTitle
+        let title = entry.defectTitle.isEmpty ? String(localized: "Inspection Finding") : entry.defectTitle
         drawText(
             title,
             font: .systemFont(ofSize: 12, weight: .bold),
@@ -472,7 +473,7 @@ enum PDFReportGenerator {
         )
         let locationText = entry.location.isEmpty ? entry.buildingSystem.displayName : entry.location
         drawText(
-            "Location: \(locationText)",
+            String(localized: "Location: \(locationText)"),
             font: .systemFont(ofSize: 9.5, weight: .medium),
             color: muted,
             rect: CGRect(x: innerX + pillWidth + 10, y: cursorY + 16, width: innerWidth - pillWidth - 10, height: 14)
@@ -507,15 +508,15 @@ enum PDFReportGenerator {
         }
 
         // Observation
-        let observation = entry.observationNarrative.isEmpty ? "No observation narrative recorded." : entry.observationNarrative
-        let obsAttributed = labeledAttributedString(label: "Observation: ", body: observation, slate: slate)
+        let observation = entry.observationNarrative.isEmpty ? String(localized: "No observation narrative recorded.") : entry.observationNarrative
+        let obsAttributed = labeledAttributedString(label: observationLabel, body: observation, slate: slate)
         let obsHeight = measureAttributedHeight(obsAttributed, width: innerWidth)
         obsAttributed.draw(in: CGRect(x: innerX, y: cursorY, width: innerWidth, height: obsHeight))
         cursorY += obsHeight + 8
 
         // Recommendation
-        let recommendation = entry.recommendation.isEmpty ? "Monitor and consult a qualified licensed specialist if condition worsens." : entry.recommendation
-        let recAttributed = labeledAttributedString(label: "Recommendation: ", body: recommendation, slate: slate)
+        let recommendation = entry.recommendation.isEmpty ? defaultRecommendation : entry.recommendation
+        let recAttributed = labeledAttributedString(label: recommendationLabel, body: recommendation, slate: slate)
         let recHeight = measureAttributedHeight(recAttributed, width: innerWidth)
         recAttributed.draw(in: CGRect(x: innerX, y: cursorY, width: innerWidth, height: recHeight))
     }
@@ -533,11 +534,32 @@ enum PDFReportGenerator {
         line.lineWidth = 0.75
         line.stroke()
 
-        let address = propertyAddress.isEmpty ? "Property Inspection" : propertyAddress
+        let address = propertyAddress.isEmpty ? String(localized: "Property Inspection") : propertyAddress
         // Address column ends before the centered label (x = margin + 170) so long addresses don't overprint it.
         drawText(address, font: .systemFont(ofSize: 8.5, weight: .regular), color: muted, rect: CGRect(x: margin, y: footerY, width: 165, height: 14), alignment: .left)
-        drawText("Confidential Home Inspection Report", font: .systemFont(ofSize: 8.5, weight: .medium), color: muted, rect: CGRect(x: margin + 170, y: footerY, width: 192, height: 14), alignment: .center)
-        drawText("Page \(page) of \(totalPages)", font: .monospacedDigitSystemFont(ofSize: 8.5, weight: .semibold), color: muted, rect: CGRect(x: pageWidth - margin - 100, y: footerY, width: 100, height: 14), alignment: .right)
+        drawText(String(localized: "Confidential Home Inspection Report"), font: .systemFont(ofSize: 8.5, weight: .medium), color: muted, rect: CGRect(x: margin + 170, y: footerY, width: 192, height: 14), alignment: .center)
+        drawText(String(localized: "Page \(page) of \(totalPages)"), font: .monospacedDigitSystemFont(ofSize: 8.5, weight: .semibold), color: muted, rect: CGRect(x: pageWidth - margin - 100, y: footerY, width: 100, height: 14), alignment: .right)
+    }
+
+    // MARK: - Localization Helpers
+
+    /// App UI language + user region; keeps PDF dates/numbers in the same language as the report text.
+    private static var locale: Locale { AppLocale.locale }
+    private static var observationLabel: String { String(localized: "Observation: ") }
+    private static var recommendationLabel: String { String(localized: "Recommendation: ") }
+    private static var defaultRecommendation: String {
+        String(localized: "Monitor and consult a qualified licensed specialist if condition worsens.")
+    }
+
+    /// Shrinks the font (down to 6.5 pt) so longer translations of fixed-width labels don't wrap and clip.
+    private static func fittedFont(for text: String, size: CGFloat, weight: UIFont.Weight, maxWidth: CGFloat) -> UIFont {
+        var current = size
+        while current > 6.5 {
+            let font = UIFont.systemFont(ofSize: current, weight: weight)
+            if (text as NSString).size(withAttributes: [.font: font]).width <= maxWidth { return font }
+            current -= 0.5
+        }
+        return .systemFont(ofSize: current, weight: weight)
     }
 
     // MARK: - Drawing & Measurement Helpers

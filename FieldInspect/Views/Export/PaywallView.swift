@@ -25,7 +25,7 @@ struct PaywallView: View {
                 .padding(20)
             }
             .background(DesignSystem.Colors.surfacePrimary)
-            .navigationTitle("FieldInspect Pro")
+            .navigationTitle(Text(verbatim: "FieldInspect Pro"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -82,7 +82,7 @@ struct PaywallView: View {
         .background(DesignSystem.Colors.surfaceSecondary, in: RoundedRectangle(cornerRadius: DesignSystem.Layout.cornerRadius))
     }
 
-    private func benefitRow(icon: String, title: String, subtitle: String) -> some View {
+    private func benefitRow(icon: String, title: LocalizedStringKey, subtitle: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: icon)
                 .font(.headline)
@@ -108,7 +108,7 @@ struct PaywallView: View {
                 title: "Annual Pro",
                 price: storeKit.annualProduct?.displayPrice ?? "—",
                 period: "per year",
-                badge: storeKit.annualSavingsPercent.map { "Save \($0)%" }
+                badge: storeKit.annualSavingsPercent.map { String(localized: "Save \($0)%") }
             )
 
             planCard(
@@ -136,7 +136,7 @@ struct PaywallView: View {
         }
     }
 
-    private func planCard(option: PlanOption, title: String, price: String, period: String, badge: String?) -> some View {
+    private func planCard(option: PlanOption, title: LocalizedStringKey, price: String, period: LocalizedStringKey, badge: String?) -> some View {
         let isSelected = selectedPlan == option
         return Button {
             selectedPlan = option
@@ -190,7 +190,7 @@ struct PaywallView: View {
                 }
                 let targetProduct = selectedPlan == .annual ? storeKit.annualProduct : storeKit.monthlyProduct
                 guard let product = targetProduct else {
-                    storeKit.errorMessage = "Subscription products are not available yet. Please verify your network connection or App Store Connect product configuration."
+                    storeKit.errorMessage = String(localized: "Subscription products are not available yet. Please verify your network connection or App Store Connect product configuration.")
                     return
                 }
                 let outcome = await storeKit.purchase(product)

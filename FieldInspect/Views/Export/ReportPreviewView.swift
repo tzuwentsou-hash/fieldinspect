@@ -47,9 +47,10 @@ struct ReportPreviewView: View {
     private func generatePDF() async {
         let data = PDFReportGenerator.generateReport(for: project)
         let sanitizedAddress = project.propertyAddress
-            .replacingOccurrences(of: "[^A-Za-z0-9_-]", with: "_", options: .regularExpression)
+            // Keep letters/digits from any script so Chinese or accented addresses aren't reduced to "_".
+            .replacingOccurrences(of: "[^\\p{L}\\p{N}_-]+", with: "_", options: .regularExpression)
             .trimmingCharacters(in: CharacterSet(charactersIn: "_"))
-        let fileName = (sanitizedAddress.isEmpty ? "Inspection_Report" : sanitizedAddress) + "_Report.pdf"
+        let fileName = (sanitizedAddress.isEmpty ? "Inspection" : sanitizedAddress) + "_Report.pdf"
         let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
         try? data.write(to: tempURL, options: .atomic)
 

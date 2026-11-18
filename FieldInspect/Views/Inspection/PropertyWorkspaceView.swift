@@ -25,7 +25,7 @@ struct PropertyWorkspaceView: View {
             .padding(16)
         }
         .background(DesignSystem.Colors.surfacePrimary)
-        .navigationTitle(project.propertyAddress.isEmpty ? "Inspection" : project.propertyAddress)
+        .navigationTitle(project.propertyAddress.isEmpty ? String(localized: "Inspection") : project.propertyAddress)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItemGroup(placement: .topBarTrailing) {
@@ -80,7 +80,7 @@ struct PropertyWorkspaceView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(project.clientName.isEmpty ? "Residential Inspection" : "Client: \(project.clientName)")
                         .font(.subheadline.bold())
-                    Text("\(project.propertyType.rawValue) • Built \(project.yearBuilt) • \(project.weatherConditions)")
+                    Text("\(project.propertyType.displayName) • Built \(String(project.yearBuilt)) • \(WeatherCondition.displayName(for: project.weatherConditions))")
                         .font(DesignSystem.Typography.monospacedCaption())
                         .foregroundStyle(.secondary)
                 }
@@ -174,7 +174,7 @@ struct PropertyWorkspaceView: View {
                                     .font(.subheadline.bold())
                                     .foregroundStyle(isSelected ? .white : .primary)
                                     .lineLimit(1)
-                                Text("\(entries.count) finding\(entries.count == 1 ? "" : "s")")
+                                Text("\(entries.count) finding(s)")
                                     .font(DesignSystem.Typography.monospacedCaption())
                                     .foregroundStyle(isSelected ? .white.opacity(0.85) : .secondary)
                             }
@@ -202,7 +202,7 @@ struct PropertyWorkspaceView: View {
         let displayedSystems: [BuildingSystem] = selectedSystemFilter.map { [$0] } ?? BuildingSystem.allCases
 
         return VStack(alignment: .leading, spacing: 12) {
-            Text(selectedSystemFilter?.displayName ?? "All Recorded Findings")
+            Text(selectedSystemFilter?.displayName ?? String(localized: "All Recorded Findings"))
                 .font(.headline)
 
             let hasAny = displayedSystems.contains { !project.defects(in: $0).isEmpty }
@@ -321,7 +321,7 @@ private struct DefectEntryCard: View {
                     Spacer()
                 }
 
-                Text(entry.defectTitle.isEmpty ? "Untitled Finding" : entry.defectTitle)
+                Text(entry.defectTitle.isEmpty ? String(localized: "Untitled Finding") : entry.defectTitle)
                     .font(.subheadline.bold())
                     .foregroundStyle(.primary)
                     .lineLimit(2)

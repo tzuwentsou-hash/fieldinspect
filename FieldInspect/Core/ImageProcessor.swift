@@ -9,6 +9,13 @@ enum CalloutTool: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
+    var displayName: String {
+        switch self {
+        case .freehand: return String(localized: "Circle / Draw")
+        case .arrow: return String(localized: "Arrow")
+        }
+    }
+
     var sfSymbol: String {
         switch self {
         case .freehand: return "scribble.variable"

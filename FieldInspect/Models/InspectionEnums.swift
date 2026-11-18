@@ -172,4 +172,55 @@ enum PropertyType: String, Codable, CaseIterable, Identifiable {
     case multiFamily = "Multi-Family"
 
     var id: String { rawValue }
+
+    /// Localized label for UI and PDF. `rawValue` stays English: it is persisted and sent to Gemini.
+    var displayName: String {
+        switch self {
+        case .singleFamily: return String(localized: "Single Family")
+        case .townhouse: return String(localized: "Townhouse")
+        case .condo: return String(localized: "Condominium")
+        case .multiFamily: return String(localized: "Multi-Family")
+        }
+    }
+}
+
+/// Weather presets. The English `rawValue` is what gets persisted in `InspectionProject.weatherConditions`,
+/// so existing data keeps working; only the displayed label is localized.
+enum WeatherCondition: String, CaseIterable, Identifiable {
+    case clear = "Clear"
+    case partlyCloudy = "Partly Cloudy"
+    case overcast = "Overcast"
+    case lightRain = "Light Rain"
+    case heavyRain = "Heavy Rain"
+    case snowCold = "Snow / Cold"
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        switch self {
+        case .clear: return String(localized: "Clear")
+        case .partlyCloudy: return String(localized: "Partly Cloudy")
+        case .overcast: return String(localized: "Overcast")
+        case .lightRain: return String(localized: "Light Rain")
+        case .heavyRain: return String(localized: "Heavy Rain")
+        case .snowCold: return String(localized: "Snow / Cold")
+        }
+    }
+
+    /// Localized label for a stored weather string; free text that isn't a preset is shown as-is.
+    static func displayName(for stored: String) -> String {
+        WeatherCondition(rawValue: stored)?.displayName ?? stored
+    }
+
+    /// Default ambient temperature text in the user's preferred unit (68°F in the US, 20°C elsewhere).
+    static var defaultAmbientTemperature: String {
+        let formatter = MeasurementFormatter()
+        formatter.locale = AppLocale.locale
+        formatter.unitOptions = .providedUnit
+        formatter.numberFormatter.maximumFractionDigits = 0
+        let celsius = Measurement(value: 20, unit: UnitTemperature.celsius)
+        let usesFahrenheit = AppLocale.locale.measurementSystem == .us
+        let value = usesFahrenheit ? celsius.converted(to: .fahrenheit) : celsius
+        return formatter.string(from: value)
+    }
 }
