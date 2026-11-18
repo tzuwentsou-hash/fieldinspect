@@ -11,7 +11,7 @@ Native iOS 17+ (SwiftUI + SwiftData) residential home inspection app built for I
     - Interactive SwiftUI `Canvas` red callout overlay (freehand circle & arrow tools) baked directly onto exported JPEGs.
     - Hold-to-record `.m4a` voice memos with `AVAudioSession` interruption handling.
   - **AI Pipeline (`Services/GeminiInspectionService.swift`, `Core/OfflineSyncQueue.swift`):**
-    - Sends multimodal JSON payloads (metadata + 1–4 JPEGs + `.m4a` audio) through a stateless Cloudflare Worker proxy to Gemini (`gemini-2.5-flash`), enforcing InterNACHI-compliant structured JSON output.
+    - Sends multimodal JSON payloads (metadata + 1–4 JPEGs + `.m4a` audio) through a stateless Cloudflare Worker proxy to Gemini (`gemini-3.8-flash`), enforcing InterNACHI-compliant structured JSON output.
     - `NWPathMonitor` FIFO offline queue for basement/crawlspace inspections without cellular signal.
   - **PDF Report Engine (`Services/PDFReportGenerator.swift`, `Views/Export/ReportPreviewView.swift`):**
     - US Letter (`612 x 792 pt`, `40 pt` margins) two-pass `UIGraphicsPDFRenderer` generating Cover Page, Executive Summary with exact page references, Building System findings cards with strict page-break math, and `Page X of Y` footers.

@@ -29,7 +29,8 @@ interface GeminiApiResponse {
   };
 }
 
-const ALLOWED_MODELS = new Set(["gemini-2.5-flash", "gemini-2.5-pro"]);
+const DEFAULT_MODEL = "gemini-3.8-flash";
+const ALLOWED_MODELS = new Set([DEFAULT_MODEL, "gemini-2.5-flash", "gemini-2.5-pro"]);
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
@@ -69,7 +70,7 @@ export default {
 
     const model = body.model && ALLOWED_MODELS.has(body.model)
       ? body.model
-      : "gemini-2.5-flash";
+      : DEFAULT_MODEL;
 
     if (!Array.isArray(body.contents) || body.contents.length === 0) {
       return Response.json(

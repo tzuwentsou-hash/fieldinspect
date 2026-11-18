@@ -14,15 +14,15 @@ enum AppConfig {
 
     /// Stateless Cloudflare Worker proxy endpoint forwarding multimodal requests to Gemini.
     /// workers.dev URLs always include your account subdomain: https://<worker-name>.<account-subdomain>.workers.dev
-    /// Replace `your-subdomain` with the URL printed by `npm run deploy`.
-    static let geminiProxyEndpoint = URL(string: "https://fieldinspect-gemini-proxy.your-subdomain.workers.dev/v1/analyze-defect")!
+    /// Deployed URL (Cloudflare account subdomain `eztsou`).
+    static let geminiProxyEndpoint = URL(string: "https://fieldinspect-gemini-proxy.eztsou.workers.dev/v1/analyze-defect")!
 
     /// Optional shared token sent as `X-FieldInspect-Token`. Must match the Worker's `APP_CLIENT_TOKEN` secret
     /// when that secret is set (prevents the proxy from being an open relay for your Gemini key). Empty = not sent.
     static let geminiProxyClientToken = ""
 
     /// Gemini model identifier used by the proxy.
-    static let geminiModel = "gemini-2.5-flash"
+    static let geminiModel = "gemini-3.8-flash"
 
     /// StoreKit 2 Product Identifiers
     enum StoreKit {
