@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FieldInspect Privacy Policy</title>
+<style>
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; color: #1e293b; background: #fff; }
+  h1 { font-size: 1.8rem; margin-bottom: 0; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; }
+  .meta { color: #64748b; margin-top: 4px; }
+  a { color: #b45309; }
+  @media (prefers-color-scheme: dark) { body { background: #0f172a; color: #e2e8f0; } .meta { color: #94a3b8; } a { color: #fbbf24; } }
+</style>
+</head>
+<body>
+<h1>FieldInspect Privacy Policy</h1>
+<p class="meta">Effective date: November 18, 2026</p>
+
+<p>FieldInspect ("the app") helps home inspectors document defects, generate written findings with AI, and export PDF inspection reports. This policy explains what information the app handles and who it is shared with.</p>
+
+<h2>1. Information you create in the app</h2>
+<p>The app stores the following on your device: property addresses, client names, inspection details (property type, year built, weather, temperature), your inspector name, company name and license number, defect photos (with any markup you draw), voice memos, typed notes, and the findings and reports generated from them. This data is stored locally on your device.</p>
+<p>If iCloud sync is enabled in your version of the app, this data is also stored in your private iCloud (CloudKit) database, which is accessible only to you through your Apple ID. We do not have access to it.</p>
+
+<h2>2. AI processing of findings</h2>
+<p>When you save a finding, the app sends the photos, voice memo, typed notes, property type and year built for that finding to our proxy service (hosted on Cloudflare Workers), which forwards them to the Google Gemini API to generate the structured defect narrative. Property addresses, client names and your credentials are not included in these requests.</p>
+<ul>
+  <li>Our proxy only relays the request and the response. It does not store your photos, audio or notes.</li>
+  <li>Google processes the content to produce a response under its own terms and privacy policy for the Gemini API. Please avoid capturing people's faces or other sensitive personal information in photos or recordings where possible.</li>
+  <li>AI output can contain mistakes. You are responsible for reviewing and editing every finding before sharing a report.</li>
+</ul>
+<p>You will be asked to acknowledge this before your first finding is sent for AI processing. If you do not want content sent for AI processing, do not save findings with photos, audio or notes.</p>
+
+<h2>3. Permissions</h2>
+<ul>
+  <li><strong>Camera</strong>: to take property and defect photos.</li>
+  <li><strong>Photo library</strong>: only for photos you choose to attach.</li>
+  <li><strong>Microphone</strong>: to record voice memos while you hold the record button.</li>
+</ul>
+<p>You can change these at any time in iOS Settings.</p>
+
+<h2>4. Subscriptions and payments</h2>
+<p>Subscriptions are processed entirely by Apple through the App Store. We do not receive or store your payment details. We only learn, through StoreKit on your device, whether your subscription is active.</p>
+
+<h2>5. What we do not do</h2>
+<p>The app has no advertising, no third-party analytics or tracking SDKs, and we do not sell your information. We do not require you to create an account.</p>
+
+<h2>6. Sharing reports</h2>
+<p>PDF reports are created on your device. They are shared only when you choose to share them, for example through the iOS share sheet.</p>
+
+<h2>7. Retention and deletion</h2>
+<p>Your data stays on your device (and in your iCloud, if enabled) until you delete it. Deleting an inspection in the app removes its findings, photos and audio. Deleting the app removes all local data. Because our proxy does not store content, there is nothing for us to delete on our side.</p>
+
+<h2>8. Children</h2>
+<p>The app is intended for professional use and is not directed to children under 13.</p>
+
+<h2>9. Changes to this policy</h2>
+<p>If we change this policy, we will update the effective date above. Material changes will also be noted in the app's release notes.</p>
+
+<h2>10. Contact</h2>
+<p>Questions or requests about privacy: <a href="mailto:CONTACT_EMAIL_HERE">CONTACT_EMAIL_HERE</a></p>
+</body>
+</html>

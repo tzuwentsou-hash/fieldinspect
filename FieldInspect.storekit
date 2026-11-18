@@ -1,0 +1,80 @@
+{
+  "identifier" : "A1B2C3D4-E5F6-4789-ABCD-0123456789AB",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_storeKitErrors" : [
+
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21500001",
+      "localizations" : [
+
+      ],
+      "name" : "FieldInspect Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "49.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "67000001",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlimited residential inspections, Gemini AI synthesis, and PDF reports.",
+              "displayName" : "FieldInspect Pro Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.fieldinspect.ai.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pro Monthly",
+          "subscriptionGroupID" : "21500001",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "349.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "67000002",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlimited residential inspections, Gemini AI synthesis, and PDF reports (Save 42%).",
+              "displayName" : "FieldInspect Pro Annual",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.fieldinspect.ai.pro.annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pro Annual",
+          "subscriptionGroupID" : "21500001",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
