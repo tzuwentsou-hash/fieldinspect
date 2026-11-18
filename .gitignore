@@ -7,3 +7,6 @@ Worker/node_modules/
 Worker/.wrangler/
 Worker/dist/
 .dev.vars
+
+# Local secrets (copy Config/Secrets.example.xcconfig)
+Config/Secrets.xcconfig

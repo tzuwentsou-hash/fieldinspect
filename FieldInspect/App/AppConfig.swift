@@ -19,7 +19,11 @@ enum AppConfig {
 
     /// Optional shared token sent as `X-FieldInspect-Token`. Must match the Worker's `APP_CLIENT_TOKEN` secret
     /// when that secret is set (prevents the proxy from being an open relay for your Gemini key). Empty = not sent.
-    static let geminiProxyClientToken = ""
+    /// Injected at build time from Config/Secrets.xcconfig (gitignored) via the Info.plist key `GeminiProxyClientToken`.
+    static let geminiProxyClientToken: String = {
+        let raw = Bundle.main.object(forInfoDictionaryKey: "GeminiProxyClientToken") as? String ?? ""
+        return raw.trimmingCharacters(in: .whitespacesAndNewlines)
+    }()
 
     /// Gemini model identifier used by the proxy.
     static let geminiModel = "gemini-3.8-flash"

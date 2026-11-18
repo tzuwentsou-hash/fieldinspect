@@ -1,0 +1,5 @@
+// Base build settings for the FieldInspect app target.
+// Local secrets live in Secrets.xcconfig (gitignored); the include is optional so
+// fresh clones still build (token falls back to empty).
+GEMINI_PROXY_CLIENT_TOKEN =
+#include? "Secrets.xcconfig"

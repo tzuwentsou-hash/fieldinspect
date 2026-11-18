@@ -31,13 +31,18 @@ npx wrangler secret put GEMINI_API_KEY
 npx wrangler secret put APP_CLIENT_TOKEN   # optional but recommended: blocks other clients from using your Gemini key
 npm run deploy
 ```
-Update `AppConfig.geminiProxyEndpoint` in `FieldInspect/App/AppConfig.swift` with your deployed URL (`https://fieldinspect-gemini-proxy.<your-account-subdomain>.workers.dev/v1/analyze-defect`). If you set `APP_CLIENT_TOKEN`, put the same value in `AppConfig.geminiProxyClientToken`.
+Update `AppConfig.geminiProxyEndpoint` in `FieldInspect/App/AppConfig.swift` with your deployed URL (`https://fieldinspect-gemini-proxy.<your-account-subdomain>.workers.dev/v1/analyze-defect`). If you set `APP_CLIENT_TOKEN`, put the same value in your local `Config/Secrets.xcconfig` (see below).
 
 ### 2. Xcode & iOS
 1. Open `FieldInspect.xcodeproj` in Xcode.
 2. Select your Apple Developer Team under **Signing & Capabilities**.
 3. Once your iCloud container (`iCloud.com.fieldinspect.ai.app`) is provisioned, set `AppConfig.isCloudKitProvisioned = true` in `FieldInspect/App/AppConfig.swift`.
 4. For local StoreKit 2 testing in Simulator, the shared scheme is pre-configured with `FieldInspect.storekit`.
+5. Proxy client token (kept out of git):
+   ```bash
+   cp Config/Secrets.example.xcconfig Config/Secrets.xcconfig
+   ```
+   Set `GEMINI_PROXY_CLIENT_TOKEN` in `Config/Secrets.xcconfig` to exactly the Worker's `APP_CLIENT_TOKEN` secret. The file is gitignored and included by `Config/Shared.xcconfig`; at build time the value lands in Info.plist (`GeminiProxyClientToken`) and is read by `AppConfig.geminiProxyClientToken`. Without it the app still builds and sends no token.
 
 ## Testing
 ```bash
